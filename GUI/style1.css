@@ -1,0 +1,122 @@
+*{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+   
+    margin: 0px;
+    padding: 0px;
+    
+}
+.container{
+
+width: 30%;
+height: fit-content;
+margin-top: 12.5vh;
+margin-bottom: 12.5vh;
+border: none;
+background-color: rgba(0, 0, 0, 0.413);
+border-radius: 10px;
+margin-right: auto;
+margin-left: auto;
+background-image: linear-gradient(45deg, #0059a74b, #fffde459);
+}
+
+.container h1{
+    color: white;
+    text-align: center;
+}
+.login-p{
+    display: flex;
+    justify-content: center;
+    color: azure;
+}
+.login-p a{
+    text-decoration: none;
+    color: #4286f4;
+}
+.wap{
+    display: flex;
+    justify-content: center;
+}
+.wap1{
+    color: azure;
+    font-size: large;
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    padding-left: 8%;
+}
+.inpt{
+    padding-left: 10px;
+    border-radius: 20px;
+    width: 80%;
+    height: 50px;
+    
+
+}
+input:hover{
+    border-color: #4286f4;
+}
+button{
+    font-size: larger;
+    border-radius: 20px;
+    margin: 20px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    box-shadow: #262930;
+}
+button:hover{
+color: azure;
+background-color: #4286f4;
+}
+.logo img{
+  
+    display: block;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+   
+}
+.circle-1{
+    position: absolute;
+    top: 25px;
+    left: 470px;
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #373b443c, #4286f436);
+
+}
+.circle-2{
+    position: absolute;
+    bottom: -75px;
+    right: 470px;
+    z-index: -1;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #373b4449, #4286f468);
+
+}
+.myVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+}
+@media (min-aspect-ratio: 16/9){
+    .myVideo{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .myVideo{
+        width: 100%;
+        height: auto;
+    }
+}

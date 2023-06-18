@@ -1,90 +1,60 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
-    background-color: black;
+    background-image: url('https://blog.gale.com/wp-content/uploads/2017/02/loriw.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(0, 0, 0);
 }
 
-.container {
-
-    margin-top: 25vh;
-    height: 50vh;
-    max-width: 30%;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: auto;
-    background-color: rgb(44, 43, 42);
-    border: none;
-    box-shadow: 10px 20px 20px 10px red;
-    border-radius: 25px;
-
-
+.navbar {
+    padding: 20px;
+    box-shadow: 2px 5px 10px 2px rgb(51, 50, 50);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color: rgb(55, 54, 54);
 }
 
-.container h1 {
-    color: aqua;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    padding-top: 20px;
-
-}
-
-.card {
-
-    text-align: center;
-    align-items: center;
-
-}
-
-.field {
-    padding-top: 30px;
-
-}
-
-form {
-padding-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-form input {
-    
-    width: 75%;
+.box{
+    border: 2px solid yellow;
     padding: 10px;
+    text-align: center;
     border-radius: 10px;
-    border-color: aqua;
-
-
-}
-.blogin{
-    padding: 11px;
-    text-align: center;
-    width: 25%;
-    margin-top: 30px;
-    border: none;
-    background-color: rgb(212, 120, 33);
-    color: white;
-    border-radius: 15px;
-}
-.atag{
-    text-align: center;
-    color: rgb(221, 137, 27);
-    font-size: small;
-    
-}
-.container:hover {
-    box-shadow: -10px -20px 20px 10px rgb(59, 59, 233);
+    box-shadow: 0px 0px 20px 3px rgb(255, 255, 0);
 }
 
-.container hr {
+.welcome {
     width: 80%;
-}
-
-
-/*card{
-    width: 350px;
-    border: 3px solid black;
-    background-color: lightblue;
-    margin-top: 300px;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;
+    max-width: 300px;
+    max-width: 400px;
+    margin-top: 100px;
+    color: rgb(0, 0, 0);
+}
 
-}*/
+.welcome img {
+    width: 40%;
+    mask-image: none;
+}
+
+.courses{
+    margin-top: 100px;
+}
+
+.card{
+    background-color: rgb(60, 158, 255);
+    border-radius: 20px;
+    margin: 5px 10px;
+    color: #000;
+    box-shadow: 0px 0px 10px 5px rgb(0, 187, 255);
+}
+
+.card-text{
+    font-family: 'Courier New';
+    color: rgb(255, 65, 27);
+}

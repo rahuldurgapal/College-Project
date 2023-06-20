@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <h1 class="shadow">
+            TEXT EDITOR
+        </h1>
+        <div class="flex-box">
+            <div class="row">
+                <div class="col">
+                    <!-- adding different button -->
+
+                    <!-- this a bold button -->
+                    <button type="button" onclick="bold()" data-toggle="tooltip"
+                        class=" shadow-sm btn btn-outline-secondary" data-placement="top" title="Bold Text">
+                        BOLD
+                    </button>
+
+                    <!-- this button is itallic text -->
+                    <button type="button" onclick="italic()" class="shadow-sm btn btn-outline-success"
+                        data-toggle="tooltip" data-placement="top" title="Italic Text">
+                        ITALIC
+                    </button>
+
+                    <!-- this button is left align  -->
+                    <button type="button" onclick="left_alignment()" class=" shadow-sm btn btn-outline-primary"
+                        data-toggle="tooltip" data-placement="top" title="Left Align">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+
+                    <!-- this button is center alignment -->
+                    <button type="button" onclick="center_alignment()" class=" shadow-sm btn btn-outline-primary"
+                        data-toggle="tooltip" data-placement="top" title="Center Align">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+
+                    <!-- this button is right alignment -->
+                    <button type="button" onclick="right_alignment()" class="btn shadow-sm btn-outline-primary"
+                        data-toggle="tooltip" data-placement="top" title="Right Align">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+
+                    <!-- this button is upper text -->
+                    <button type="button" onclick="upper_text()" class="btn shadow-sm btn-outline-secondary"
+                        data-toggle="tooltip" data-placement="top" title="Uppercase Text">
+                        Upper Case</button>
+
+                    <!-- this button is lower text -->
+                    <button type="button" onclick="lower_text()" class="btn shadow-sm btn-outline-primary"
+                        data-toggle="tooltip" data-placement="top" title="Lowercase Text">
+                        Lower Case</button>
+
+                    <!-- this button is Capital Text -->
+                    <button type="button" onclick="captalize_text()" class="btn shadow-sm btn-outline-primary"
+                        data-toggle="tooltip" data-placement="top" title="Capitalize Text">
+                        Capitalize</button>
+
+                    <!-- this button is To clear text -->
+                    <button type="button" onclick="clear_text()" class="btn shadow-sm btn-outline-primary side"
+                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                        Clear Text</button>
+                    
+                        <!-- this button is To download text -->
+                    <button type="button" onclick="download()" class="btn shadow-sm btn-outline-primary side"
+                        data-toggle="tooltip" data-placement="top" title="Download">Download</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+            </div>
+            <div class="col-md-6 col-sm-9">
+                <div class="flex-box">
+                    <textarea id="textarea1" 
+                              class="input shadow" 
+                              name="name" 
+                              rows="15" 
+                              cols="100" 
+                              placeholder="Your text here ">
+                    </textarea>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </section>
+    <br>
+    </section>
+</body>
+
+</html>

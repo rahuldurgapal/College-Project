@@ -60,7 +60,7 @@ form h2{
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #32be85;
+    background-color: #e0721e;
     transition: .3s;
 }
 .input_div:after
@@ -141,7 +141,7 @@ form h2{
     margin: 1rem 0;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #32be85, #38d395, #32be8f);
+    background-image: linear-gradient(to right, #e0721e, #e0721e, #e0721e);
     cursor: pointer;
     color: #fff;
     font-family: 'Poppins', sans-serif;

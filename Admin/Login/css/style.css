@@ -186,7 +186,7 @@ form h2{
 		display: none;
 	}
 
-	.login-content{
+	.login_container{
 		justify-content: center;
 	}
 }

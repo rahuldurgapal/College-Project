@@ -25,9 +25,9 @@
                 <h2>Welcome</h2>
                 <?php
                     if(isset($_GET['warn'])){
-                    echo '<div class="alert alert-danger" role="alert">'.
-                        $_GET['warn'].
-                    '</div>';
+                        echo '<div class="alert alert-danger" role="alert">'.
+                                $_GET['warn'].
+                             '</div>';
                     }
                 ?>
                 <div class="input_div one">

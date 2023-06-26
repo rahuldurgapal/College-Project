@@ -1,3 +1,26 @@
+<?php
+session_start();
+if(isset($_SESSION['otp']))
+{
+    $x = $_SESSION['otp'];
+    echo "<script> console.log($x)  </script>";
+    if(isset($_POST['otp']))
+    {
+         $value = $_POST['ottp'];
+         if($value==$x){
+            unset($_SESSION['otp']);
+            $_SESSION['confirm']="confirm otp";
+          header("Location: new_password.php");
+         }
+          else{ 
+            unset($_POST['otp']);
+            $warn = "invalid OTP";
+            header("Location: otp_verify.php?warn=$warn");
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +43,7 @@
             <img src="img/programming.svg" alt="">
         </div>
         <div class="login_container">
-            <form action="../app/http/auth.php" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF'];   ?>" method="post">
                 <img class="profile" src="img/profile.svg" alt="">
                 <h2>Welcome</h2>
                 <?php
@@ -32,24 +55,14 @@
                 ?>
                 <div class="input_div one">
                     <div class="i">
-                        <i class="fas fa-user"></i>
+                        <!-- <i class="fas fa-user"></i> -->
                     </div>
                     <div>
-                        <h5>Username or Email</h5>
-                        <input type="text" class="input" autocomplete="off" name="username">
+                        <h5>Enter OTP</h5>
+                        <input type="text"  class="input" autocomplete="off" name="ottp">
                     </div>
                 </div>
-                <div class="input_div two">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div>
-                        <h5>Password</h5>
-                        <input type="password" class="input" name="password">
-                    </div>
-                </div>
-                <a href="Forget_Password.php">Forgot Password?</a>
-                <input type="submit" value="Login" name="login" class="btn">
+                <input type="submit" value="Verify" name="otp" class="btn">
 
             </form>
         </div>
@@ -58,3 +71,12 @@
 </body>
 
 </html>
+
+<?php
+
+// session_unset();
+}
+else
+ header("Location: Forget_Password.php");
+?>
+4

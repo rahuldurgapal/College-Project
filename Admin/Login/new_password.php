@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if(isset($_SESSION['confirm']))
+{
+    ?>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,10 +37,10 @@
                 ?>
                 <div class="input_div one">
                     <div class="i">
-                        <i class="fas fa-user"></i>
+                    <i class="fas fa-lock"></i>
                     </div>
                     <div>
-                        <h5>Username or Email</h5>
+                        <h5>new password</h5>
                         <input type="text" class="input" autocomplete="off" name="username">
                     </div>
                 </div>
@@ -44,12 +49,12 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
-                        <h5>Password</h5>
+                        <h5>confirm new password</h5>
                         <input type="password" class="input" name="password">
                     </div>
                 </div>
-                <a href="Forget_Password.php">Forgot Password?</a>
-                <input type="submit" value="Login" name="login" class="btn">
+                <!-- <a href="Forget_Password.php">Forgot Password?</a> -->
+                <input type="submit" value="submit" name="login" class="btn">
 
             </form>
         </div>
@@ -58,3 +63,10 @@
 </body>
 
 </html>
+
+    <?php
+}
+else
+ header("Location: index.php");
+
+?>

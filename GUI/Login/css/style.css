@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.formc{
+    position: relative;
+    width: 450px;
+    padding: 50px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background-color: rgba(149, 211, 232, 0.434);
+
+}
+.Form-c{
+     display:flex;
+     justify-content: center;
+     
+}
+.mid-c{
+    padding-top: 100px;
+    
+}
+.l-form{
+    font-size: 40px;
+    font-family: Verdana,  sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+
+}
+.input-s{
+    background-color: rgb(232, 230, 230);
+    border-radius: 15px;
+    border-style:ridge;
+    padding: 12px;
+    color: white;
+}
+.input-s:hover{
+    background-color: rgb(255, 255, 255);
+    
+}
+.check-r{
+    padding-bottom: 28px;
+    
+}
+.f-pass{
+
+    padding-left: 30px;
+    
+
+}
+.btn-s{
+    padding-left: 10px;
+}

@@ -140,6 +140,8 @@ form h2 {
     font-family: 'Poppins', sans-serif;
 }
 
+
+
 .btn {
     display: block;
     width: 100%;
@@ -158,6 +160,18 @@ form h2 {
     transition: .5s;
 }
 
+#link{
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #999;
+	font-size: 1rem;
+	transition: .3s;
+}
+
+#link:hover{
+	color: #e0721e;
+}
 .btn:hover {
     background-position: right;
 }

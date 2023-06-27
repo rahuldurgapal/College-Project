@@ -1,3 +1,30 @@
+<?php
+ include ("db_connection.php");
+ if(isset($_POST['verify']))
+ {
+    session_start();
+    $email = $_POST['admin_email'];
+    $sql = "SELECT * FROM `admin` WHERE `admin_email` = '$email'";
+    $q=mysqli_query($con,$sql);
+    if(mysqli_num_rows($q)>=1)
+    {
+        $_SESSION['otp']=rand(100000,999999);
+        $_SESSION['email']=$email;
+        header("Location: otp_verify.php");
+    }
+    else{ 
+        unset($_POST['verify']);
+        $warn = "Your @email is invalid!";
+        header("Location: Forget_Password.php?warn=$warn");
+    }
+ }
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +47,7 @@
             <img src="img/programming.svg" alt="">
         </div>
         <div class="login_container">
-            <form action="../app/http/auth.php" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF'];   ?>" method="post">
                 <img class="profile" src="img/profile.svg" alt="">
                 <h2>Welcome</h2>
                 <?php
@@ -35,21 +62,11 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div>
-                        <h5>Username or Email</h5>
-                        <input type="text" class="input" autocomplete="off" name="username">
+                        <h5>Enter Your Email</h5>
+                        <input type="email" class="input" autocomplete="off" name="admin_email">
                     </div>
                 </div>
-                <div class="input_div two">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div>
-                        <h5>Password</h5>
-                        <input type="password" class="input" name="password">
-                    </div>
-                </div>
-                <a href="Forget_Password.php" id="link">Forgot Password?</a>
-                <input type="submit" value="Login" autocomplete="off" name="login" class="btn">
+                <input type="submit" value="Send OTP" name="verify" class="btn">
 
             </form>
         </div>

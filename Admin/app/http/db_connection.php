@@ -11,8 +11,7 @@ ini_set('display_startup_errors', 1);
  
  if(!$con)
   die("Connection Failed");
-else
- echo "successfull";
+
 
 
 

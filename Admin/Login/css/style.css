@@ -160,7 +160,7 @@ form h2 {
     transition: .5s;
 }
 
-a{
+#link{
 	display: block;
 	text-align: right;
 	text-decoration: none;
@@ -169,7 +169,7 @@ a{
 	transition: .3s;
 }
 
-a:hover{
+#link:hover{
 	color: #e0721e;
 }
 .btn:hover {

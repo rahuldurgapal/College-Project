@@ -16,15 +16,16 @@ $password = $_POST['password'];
          {
             $sql2 = "SELECT * FROM `admin` WHERE `admin_password` = '$password'";
             $q2=mysqli_query($con,$sql2);
-            if(mysqli_num_rows($q2)>=1)
-             echo "Login Successfull";
+            if(mysqli_num_rows($q2)>=1){
+             echo "<center>  <h1> Welcome to Admin Panel </h1> </center>";
+            }
              else{ 
                    $warn = "Your password is invalid!";
                    header("Location: ../../Login?warn=$warn");
                  }
          }
         else{ 
-                $warn = "Your @username is invalid!";
+                $warn = "Your @username or @email is invalid!";
                 header("Location: ../../Login?warn=$warn");
             }
          

@@ -12,18 +12,16 @@ body{
 
 }
 .login{
-    width: 360px;
+    width: 400px;
     height: min-content;
     padding: 20px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.516);
-    
-
+    box-shadow: 0px 0px 20px 5px rgb(0, 108, 151);
 }
 .login h2{
     font-size: 36px;
     margin-bottom: 25px;
-
 }
 .login form{
     font-size: 20px;

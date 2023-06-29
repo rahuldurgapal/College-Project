@@ -1,0 +1,62 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    background-image: url('../image/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+}
+
+.navbar {
+    padding: 20px;
+    box-shadow: 2px 5px 10px 2px rgb(51, 50, 50);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color: rgb(55, 54, 54);
+}
+
+.box {
+    border: 2px solid yellow;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 10px rgb(255, 255, 0);
+}
+
+.welcome {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    max-width: 400px;
+    margin-top: 250px;
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
+}
+
+.welcome img {
+    width: 40%;
+    mask-image: none;
+}
+
+.courses {
+    margin-top: 150px;
+}
+
+.card {
+    background-color: rgb(60, 158, 255);
+    border-radius: 20px;
+    margin: 5px 10px;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgb(0, 187, 255);
+}
+
+.card-text {
+    font-family: 'Courier New';
+    color: rgb(211, 248, 253);
+}

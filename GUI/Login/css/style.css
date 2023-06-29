@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 170, 255);
+
+}
+.login{
+    width: 400px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.516);
+    box-shadow: 0px 0px 20px 5px rgb(0, 108, 151);
+}
+.login h2{
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+.login form{
+    font-size: 20px;
+}
+.login form input[type="submit"]{
+    font-size: 20px;
+    margin-top: 15px;
+}
+.login form label p{
+    margin-top: 20px;
+}
+.login form label button{
+    font-size: 15px;
+    margin-left: 10px;
+}
+#check{
+    margin-top: 11px;
+    position: relative;
+}
+#Remember{
+    font-size: 17px;
+    margin-top: 10px;
+    position: relative;
+}
+#Forget{
+    position: relative;
+font-size: 17px;
+float:right;
+margin-top: 10px;
+
+}
+#Forget a{
+    text-decoration: none;
+    color: black;
+}
+#Forget a:hover{
+    color: rgb(25, 25, 252);
+}

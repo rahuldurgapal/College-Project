@@ -18,14 +18,14 @@
     <title>Admin Panel</title>
 </head>
 
-<body  background="bg.jpg">
+<body>
     <nav class="navbar navbar-light fixed">
         <a class="navbar-brand w-15" href="#">
             <img src="../image/d.png" width="100%" alt="logo">
         </a>
         <div class="dropdown show">
-            <a class="btn dropdown-toggle" style="background-color: rgb(0, 136, 255); color: white;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="btn dropdown-toggle" style="background-color: rgb(0, 136, 255); color: white;" href="#"
+                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class='fa fa-user'></i>
                 username
             </a>
@@ -53,7 +53,8 @@
             <form action="" method="get">
             </form>
             <form action="" method="get">
-                <input type="text" name="book" placeholder="Book name, Author name, Book Id">
+                <input type="text" name="book" style="border: 2px solid rgb(255, 51, 255);"
+                    placeholder="Book name, Author name, Book Id">
                 <button type="submit" class="btn btn-primary">search</button>
             </form>
         </div>
@@ -74,7 +75,7 @@
                 <tbody>
                     <tr>
                         <th scope="row"></th>
-                        <form action="" method="post">
+                        <form action="upload_book.html" method="post">
                             <td>
                                 <div class="input">
                                     <input type="text" name="book_name" placeholder="Book name">
@@ -82,12 +83,12 @@
                             </td>
                             <td>
                                 <div class="input">
-                                <input type="text" name="author_Name" placeholder="Author name">
+                                    <input type="text" name="author_Name" placeholder="Author name">
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                <input type="text" name="subject_name" placeholder="Subject name">
+                                    <input type="text" name="subject_name" placeholder="Subject name">
                                 </div>
                             </td>
                             <td>
@@ -120,7 +121,7 @@
                         </td>
                     </tr>
 
-                    
+
                 </tbody>
             </table>
         </div>

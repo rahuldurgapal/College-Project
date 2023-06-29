@@ -18,9 +18,6 @@
         header("Location: Forget_Password.php?warn=$warn");
     }
  }
-
-
-
 ?>
 
 

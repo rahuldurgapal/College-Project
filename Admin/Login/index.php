@@ -20,7 +20,7 @@
             <img src="img/programming.svg" alt="">
         </div>
         <div class="login_container">
-            <form action="../app/http/auth.php" method="post">
+            <form action="../app/http/admin_auth.php" method="post">
                 <img class="profile" src="img/profile.svg" alt="">
                 <h2>Welcome</h2>
                 <?php

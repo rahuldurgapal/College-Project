@@ -6,7 +6,7 @@ session_start();
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    //to prevent from mysqli inection
+    //to prevent from mysqli injection
     
     $new_username = mysqli_real_escape_string($con, $username);
     $new_password = mysqli_real_escape_string($con, $password);
@@ -25,7 +25,8 @@ session_start();
     {
         $user=mysqli_fetch_assoc($result);
         $_SESSION['user']=$user['admin_id'];
-        header("location: ../../Panel/home.php");
+        $_SESSION['username'] = $user['admin_username'];
+        header("location: ../../Panel/");
     }
     else{
         $warn = "Your @username or @email or password is invalid!";

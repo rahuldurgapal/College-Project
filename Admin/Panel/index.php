@@ -19,29 +19,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light fixed">
-        <a class="navbar-brand w-15" href="#">
-            <img src="../image/d.png" width="100%" alt="logo">
-        </a>
-        <div class="dropdown show">
-            <a class="btn dropdown-toggle" style="background-color: rgb(0, 136, 255); color: white;" href="#"
-                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class='fa fa-user'></i>
-                username
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#"><i class="fa fa-edit"></i> Edit</a>
-                <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> logout</a>
-            </div>
-        </div>
-    </nav>
-
+    <?php
+        include("header.php");
+    ?>
     <div class="fixed">
         <div class="sidebar">
-            <a class="active" href="home.html">Home</a>
-            <a href="book.html">Books</a>
-            <a href="notes.html">Notes</a>
+            <a class="active" href="home.php">Home</a>
+            <a href="book.php">Books</a>
+            <a href="notes.php">Notes</a>
             <a href="#about">Syllabus</a>
         </div>
     </div>

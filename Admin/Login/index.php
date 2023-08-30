@@ -41,12 +41,34 @@
                 </div>
                 <div class="input_div two">
                     <div class="i">
-                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-lock" id="lock"></i>
+                        <i class="fa fa-eye" id="eye" style="cursor: pointer; display: none;"></i>
+
                     </div>
                     <div>
                         <h5>Password</h5>
-                        <input type="password" class="input" name="password">
+                        <input type="password" class="input" id="password" name="password">
+                        <!-- <i class="fa fa-eye" id="eye" style="cursor: pointer; display: none;"></i> -->
                     </div>
+                        <script>
+                            document.getElementById('password').addEventListener("input", () =>{
+                                if(document.getElementById('password').value.length > 0){
+                                    document.getElementById('eye').style.display = "block";
+                                    document.getElementById('lock').style.display = "none";
+                                }
+                                else{
+                                    document.getElementById('eye').style.display = "none";
+                                    document.getElementById('lock').style.display = "block";
+                                }
+                            })
+                            document.getElementById('eye').addEventListener("click", () => {
+                                if (document.getElementById('password').type === "password")
+                                    document.getElementById('password').type = "text";
+                                else 
+                                    document.getElementById('password').type = "password";
+                                
+                            })
+                        </script>
                 </div>
                 <a href="Forget_Password.php" id="link">Forgot Password?</a>
                 <input type="submit" value="Login" autocomplete="off" name="login" class="btn">

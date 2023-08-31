@@ -26,7 +26,7 @@
             <a class="active" href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a href="notes.php">Notes</a>
-            <a href="#about">Syllabus</a>
+            <a href="syllabus.php">Syllabus</a>
         </div>
     </div>
     <div class="content">

@@ -62,11 +62,15 @@
                                 }
                             })
                             document.getElementById('eye').addEventListener("click", () => {
-                                if (document.getElementById('password').type === "password")
+                                if (document.getElementById('password').type === "password"){
                                     document.getElementById('password').type = "text";
-                                else 
+                                    document.getElementById('eye').className = "fa fa-eye-slash";
+                                }
+                                else {
                                     document.getElementById('password').type = "password";
-                                
+                                    document.getElementById('eye').className = "fa fa-eye";
+
+                                }                                
                             })
                         </script>
                 </div>

@@ -27,8 +27,8 @@
         <div class="sidebar">
             <a href="index.php">Home</a>
             <a href="book.php">Books</a>
-            <a class="active" href="notes.php">Notes</a>
-            <a href="syllabus.php">Syllabus</a>
+            <a href="notes.php">Notes</a>
+            <a class="active" href="syllabus.php">Syllabus</a>
         </div>
     </div>
     <div class="content">
@@ -37,7 +37,7 @@
             <form action="" method="get">
             </form>
             <form action="" method="get">
-                <input type="text" name="book" placeholder="Topic name, Author name" style="width: 50%; border: solid 1px rgb(255, 0, 255);">
+                <input type="text" name="book" placeholder="Course Name" style="width: 50%; border: solid 1px rgb(255, 0, 255);">
                 <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
                 title="search">search</button>
             </form>
@@ -62,12 +62,12 @@
                         <form action="" method="post">
                             <td>
                                 <div class="input">
-                                    <input type="text" name="book_name" placeholder="Topic name">
+                                    <input type="text" name="course_name" placeholder="Course name">
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                    <input type="text" name="author_Name" placeholder="Author name">
+                                    <input type="text" name="author_Name" placeholder="H.O.D. name">
                                 </div>
                             </td>
                             <td>
@@ -84,40 +84,6 @@
 
                     <tr>
                         <th scope="row">1</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Page"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Page"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">3</th>
                         <td><a href="">Topic name</a></td>
                         <td>Teacher Name</td>
                         <td>Related subject</td>

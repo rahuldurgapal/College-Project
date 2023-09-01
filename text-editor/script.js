@@ -218,7 +218,7 @@ openButton.addEventListener("click", () => {
   
 });
 
-window.addEventListener('beforeunload', function (e) {
+window.addEventListener('beforeunload', (e) => {
     e.preventDefault();
     e.returnValue = 'Are you sure you want to leave this page? Your data may be lost.';
 });

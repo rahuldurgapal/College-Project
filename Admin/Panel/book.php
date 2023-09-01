@@ -1,4 +1,12 @@
+<?php
+error_reporting(E_WARNING|E_NOTICE);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+include("../app/db_connection.php");
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,25 +95,43 @@
                             </td>
                         </form>
                     </tr>
+                   <?php
 
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><a href="">Let Us C</a></td>
-                        <td>Yashavant Kanetkar</td>
-                        <td>C Programming</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Book"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Book"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Book"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
 
+                         $sql="select * from books";
+                         $query=mysqli_query($con,$sql);
+                         if(mysqli_num_rows($query)>0)
+                         {
+                           
+                         while($row=mysqli_fetch_assoc($query))
+                         {
+
+                           ?>
+                     
                     <tr>
+                        <th scope="row"><?php echo $row['book_id']; ?></th>
+                        <td><a href=""><?php echo $row['book_name']; ?></a></td>
+                        <td><?php echo $row['book_author_name'];  ?></td>
+                        <td><?php echo $row['book_subject_name'];  ?></td>
+                        <td>
+                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
+                            title="Delete Book"><i class="fa fa-trash"></i></a>
+                            &nbsp
+                            <a href="view_book.php?id=<?php echo $row['book_id']; ?>" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
+                                title="View Book"><i class="fa fa-eye"></i></a>
+                            &nbsp
+                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
+                            title="Update Book"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <?php
+                         }
+                         }
+                         else{
+                            echo "No data found";
+                         }
+                 ?>
+                    <!-- <tr>
                         <th scope="row">2</th>
                         <td><a href="">Let Us C++</a></td>
                         <td>Yashavant Kanetkar</td>
@@ -152,10 +178,11 @@
                             <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                             title="Update Book"><i class="fa fa-edit"></i></a>
                         </td>
-                    </tr>
+                    </tr> -->
 
 
                 </tbody>
+              
             </table>
         </div>
     </div>

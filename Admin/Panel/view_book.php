@@ -1,3 +1,14 @@
+<?php
+if(isset($_GET['id']))
+{
+
+  include("../app/db_connection.php");
+  error_reporting(E_WARNING|E_NOTICE);
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +43,18 @@
         </div>
     </div>
     <div class="content">
+        <?php
+        
+         $id = $_GET['id'];
+         $sql = "select book_pdf from books where book_id = '$id'";
+         $query=mysqli_query($con,$sql);
+         $res = mysqli_fetch_assoc($query);
+         $pdf=$res['book_pdf'];
+         ?>
+          
         <div>
             <embed
-                src="../../Students/Pdf files/Automata (2).pdf"
+                src="<?php  echo "../Panel/Books/$pdf";  ?>"
                 type="application/pdf" frameBorder="0" scrolling="auto" height = "1000px"
                 width="100%">
             </embed>
@@ -44,3 +64,8 @@
 </body>
 
 </html>
+<?php
+}
+else
+ header("location: book.php");
+?>

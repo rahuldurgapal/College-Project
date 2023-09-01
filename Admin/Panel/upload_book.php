@@ -43,7 +43,7 @@
 
             </div>
             <div class="text-center">
-                <form action="book.php" method="post">
+            <form action="../app/http/Book/book_upload.php" method="post" enctype="multipart/form-data">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-10 mb-4 mb-lg-0">
                         <div class="card mb-3" style="border-radius: .5rem;">
@@ -55,17 +55,17 @@
                                         <div class="text-center">
                                             <h5>Book Name</h5>
                                             <div class="input">
-                                                <input type="text" value="C in Depth">
+                                                <input type="text" name="book_name" required>
                                             </div>
                                             <br>
                                             <h5>Author Name</h5>
                                             <div class="input">
-                                                <input type="text" value="Deepali Srivaastava">
+                                                <input type="text" name="book_author" required>
                                             </div>
                                             <br>
                                             <h5>Subject Name</h5>
                                             <div class="input">
-                                                <input type="text" value="C language">
+                                                <input type="text" name="subject_name" required>
                                             </div>
                                         </div>
                                     </div>
@@ -76,14 +76,14 @@
                                         src="../image/book.png" id="PDFfile"
                                         type="application/pdf" frameBorder="0" scrolling="auto" height="650px"
                                         width="100%"></embed>
-                                        <input type="file" id="upload" onchange="showPDF();" style="display: none;" accept="application/pdf" />
+                                        <input type="file" name="book_pdf" id="upload"  style="display: none;" accept="application/pdf" required />
 
                                 </div>
-                                <a class="btn btn-primary"
+                                <a name="pdf" class="btn btn-primary"
                                     style="width: 80%; margin: auto; margin-top: 10px;" id="uploadBOOK">Upload a book</a>
                             </div>
                             <div class="text-center" style="padding: 10px">
-                                <button class="btn btn-success" type="submit">Upload Data</button>
+                                <button name="submit" class="btn btn-success" type="submit">Upload Data</button>
                             </div>
                         </div>
                     </div>
@@ -96,25 +96,17 @@
 </html>
 
 <script type="text/javascript">
-    // var upload = false;
-    // function clickout() {
-    //     let temp = document.getElementById("upload");
-    //     temp.click();
-    //     upload = true;
-    // }
 
     document.getElementById('uploadBOOK').addEventListener('click', () => {
         document.getElementById("upload").click();
-        // upload = true;
+        document.getElementById('upload').addEventListener('change', () =>{
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("upload").files[0]);
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("PDFfile").src = oFREvent.target.result;
+                newImage = oFREvent.target.result;
+            };
+        })
     })
-
-    function showPDF() {
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("upload").files[0]);
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("PDFfile").src = oFREvent.target.result;
-            newImage = oFREvent.target.result;
-        };
-    };
 
 </script>

@@ -19,9 +19,13 @@ session_start();
     $result = mysqli_query($con,$sql);
     $count = mysqli_num_rows($result);
 
+    $sql1 = "select * from admin where admin_email = '$new_username' and admin_password = '$new_password'";
+    $result1 = mysqli_query($con,$sql1);
+    $count1 = mysqli_num_rows($result1);
+
 
     
-    if($count>0)
+    if($count>0 || $count1>0)
     {
         $user=mysqli_fetch_assoc($result);
         $_SESSION['user']=$user['admin_id'];

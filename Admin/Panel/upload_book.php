@@ -43,7 +43,7 @@
 
             </div>
             <div class="text-center">
-                <form action="" method="post">
+                <form action="book.php" method="post">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-10 mb-4 mb-lg-0">
                         <div class="card mb-3" style="border-radius: .5rem;">
@@ -79,11 +79,11 @@
                                         <input type="file" id="upload" onchange="showPDF();" style="display: none;" accept="application/pdf" />
 
                                 </div>
-                                <button class="btn btn-primary"
-                                    style="width: 80%; margin: auto; margin-top: 10px;" onclick="clickout()">Upload a book</button>
+                                <a class="btn btn-primary"
+                                    style="width: 80%; margin: auto; margin-top: 10px;" onclick="clickout()">Upload a book</a>
                             </div>
                             <div class="text-center" style="padding: 10px">
-                                <button class="btn btn-success">Upload Data</button>
+                                <button class="btn btn-success" type="submit">Upload Data</button>
                             </div>
                         </div>
                     </div>

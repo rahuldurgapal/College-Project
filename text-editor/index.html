@@ -19,8 +19,12 @@
 <body>
     <div class="container">
         <div class="save">
-            <input type="text" id="fileName" value="index.html">            
-            <button id="saveButton" class="save"><i class="fa fa-save"> SAVE</i></button>
+            <input type="text" id="fileName" value="index">
+            <div>  
+                <button id="openFile" class="openFile"><i class="fa fa-file"> OPEN</i></button>  
+                <input type="file" id="fileInput" style="display: none;">   
+                <button id="saveFile" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
+            </div>
         </div>
         <div class="options">
             <!-- Text Format -->
@@ -88,9 +92,6 @@
             </button>
             <button id="outdent" class="option-button spacing" data-toggle="tooltip" data-placement="top" title="Outtend">
                 <i class="fa-solid fa-outdent"></i>
-            </button>
-            <button id="paragraph" class="option-button format" data-toggle="tooltip" data-placement="top" title="paragraph">
-                <i class="fa-solid fa-paragraph"></i>
             </button>
 
             <!-- Headings -->

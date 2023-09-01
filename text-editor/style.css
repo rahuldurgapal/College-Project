@@ -53,9 +53,23 @@ button {
     box-shadow: 3px 1px 4px 1px rgb(254, 145, 3);
 }
 
-.save button{
+.save>div{
+    display: flex;
+}
+
+.saveFile{
     border: none;
+    margin-left: 5px;
     background-color: red;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.openFile{
+    border: none;
+    background-color: rgb(7, 213, 100);
     color: white;
     padding: 7px;
     border-radius: 5px;

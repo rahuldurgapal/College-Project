@@ -76,7 +76,7 @@
                                         src="../image/book.png" id="PDFfile"
                                         type="application/pdf" frameBorder="0" scrolling="auto" height="650px"
                                         width="100%"></embed>
-                                        <input type="file" id="upload"  style="display: none;" accept="application/pdf" />
+                                        <input type="file" id="upload" onchange="showPDF();" style="display: none;" accept="application/pdf" />
 
                                 </div>
                                 <a class="btn btn-primary"
@@ -96,17 +96,25 @@
 </html>
 
 <script type="text/javascript">
+    // var upload = false;
+    // function clickout() {
+    //     let temp = document.getElementById("upload");
+    //     temp.click();
+    //     upload = true;
+    // }
 
     document.getElementById('uploadBOOK').addEventListener('click', () => {
         document.getElementById("upload").click();
-        document.getElementById('upload').addEventListener('change', () =>{
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(document.getElementById("upload").files[0]);
-            oFReader.onload = function (oFREvent) {
-                document.getElementById("PDFfile").src = oFREvent.target.result;
-                newImage = oFREvent.target.result;
-            };
-        })
+        // upload = true;
     })
+
+    function showPDF() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("upload").files[0]);
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("PDFfile").src = oFREvent.target.result;
+            newImage = oFREvent.target.result;
+        };
+    };
 
 </script>

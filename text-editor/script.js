@@ -166,7 +166,7 @@ saveButton.addEventListener("click", () => {
     // a.click();
     // document.body.removeChild(a);
     // URL.revokeObjectURL(url);
-    const contentToSave = "";
+    let contentToSave = "";
     if(append === false){
          contentToSave = `
         <!DOCTYPE html>

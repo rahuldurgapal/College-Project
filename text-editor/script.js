@@ -168,7 +168,7 @@ saveButton.addEventListener("click", () => {
     // URL.revokeObjectURL(url);
     let contentToSave = "";
     if(append === false){
-         contentToSave = `
+        contentToSave = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -210,7 +210,7 @@ openButton.addEventListener("click", () => {
             reader.onload = function (event) {
                 const fileContent = event.target.result;
                 const textInput = document.getElementById('text-input');
-                textInput.innerHTML = fileContent;
+                textInput.innerHTML += fileContent;
                 append = true;
             };
             reader.readAsText(file);

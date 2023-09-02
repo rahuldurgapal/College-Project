@@ -52,13 +52,13 @@
 
             </div>
             <?php
+                $sql = "select * from books where book_id = $id";
+                $q=mysqli_query($con,$sql);
+                $res = mysqli_fetch_assoc($q);
+                    
+                $file_name = $res['book_pdf'];
+            ?>
 
-           $sql = "select * from books where book_id = $id";
-           $q=mysqli_query($con,$sql);
-           $res = mysqli_fetch_assoc($q);
-            
-           $file_name = $res['book_pdf'];
-                 ?>
             <div class="text-center">
             <form action="../app/http/Book/book_update.php" method="post" enctype="multipart/form-data">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -70,20 +70,20 @@
                                         <h3>Information of Book</h3>
                                         <hr class="mt-0 mb-4">
                                         <div class="text-center">
-                                            <input type="hidden" name="id" value="<?php echo $id; ?>" 
+                                            <input type="hidden" name="id" value="<?=$id;?>">
                                             <h5>Book Name</h5>
                                             <div class="input">
-                                                <input type="text" name="book_name" value="<?php echo $res['book_name']; ?>" required>
+                                                <input type="text" name="book_name" value="<?=$res['book_name']; ?>" required>
                                             </div>
                                             <br>
                                             <h5>Author Name</h5>
                                             <div class="input">
-                                                <input type="text" name="book_author" value="<?php echo $res['book_author_name']; ?>" required>
+                                                <input type="text" name="book_author" value="<?=$res['book_author_name']; ?>" required>
                                             </div>
                                             <br>
                                             <h5>Subject Name</h5>
                                             <div class="input">
-                                                <input type="text" name="subject_name" value="<?php echo $res['book_subject_name']; ?>" required>
+                                                <input type="text" name="subject_name" value="<?=$res['book_subject_name']; ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -91,10 +91,10 @@
                                 <div class="col-md-6 gradient-custom text-center text-white"
                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                                     <embed
-                                        src="<?php echo "../Panel/Books/$file_name";   ?>" id="PDFfile"
+                                        src="<?="../Panel/Books/$file_name";   ?>" id="PDFfile"
                                         type="application/pdf" frameBorder="0" scrolling="auto" height="650px"
                                         width="100%"></embed>
-                                        <input type="file" name="book_pdf" id="upload"  style="display: none;" accept="application/pdf" required />
+                                        <input type="file" name="book_pdf" id="upload" value = "<?="../Panel/Books/$file_name"?>"  style="display: none;" accept="application/pdf" />
 
                                 </div>
                                 <a name="pdf" class="btn btn-primary"

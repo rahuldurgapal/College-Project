@@ -34,12 +34,11 @@ if(isset($_POST['submit']))
         $q=mysqli_query($con,$sql);
         if($q)
         header("location: ../../../Panel/book.php");
-       else
+        else
         echo "operation failed";
     }
     else{
         echo "Please select pdf format";
-       
     }
 }
 else{

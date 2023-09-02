@@ -3,7 +3,7 @@
     session_start();
     if(isset($_SESSION['user']))
     {
-
+       include("../app/db_connection.php");
 ?>
     <nav class="navbar navbar-light fixed">
         <a class="navbar-brand w-15" href="#">

@@ -105,7 +105,7 @@ include("../app/db_connection.php");
                            
                          while($row=mysqli_fetch_assoc($query))
                          {
-
+                           
                            ?>
                      
                     <tr>
@@ -114,13 +114,13 @@ include("../app/db_connection.php");
                         <td><?php echo $row['book_author_name'];  ?></td>
                         <td><?php echo $row['book_subject_name'];  ?></td>
                         <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Book"><i class="fa fa-trash"></i></a>
+                            <a href="../app/http/Book/delete_book.php?id=<?php echo $row['book_id']; ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
+                            title="Delete Book" onclick="return confirm('Are you sure you want to delete?')"><i class="fa fa-trash"></i></a>
                             &nbsp
                             <a href="view_book.php?id=<?php echo $row['book_id']; ?>" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Book"><i class="fa fa-eye"></i></a>
+                              target="_blank" title="View Book"><i class="fa fa-eye"></i></a>
                             &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
+                            <a href="update_book.php?id=<?php echo $row['book_id'];  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                             title="Update Book"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>

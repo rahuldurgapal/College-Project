@@ -1,5 +1,9 @@
 <?php
 session_start();
+error_reporting(E_WARNING|E_NOTICE);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
  include("../db_connection.php");
  if(isset($_POST['login']))
  {
@@ -25,9 +29,16 @@ session_start();
 
 
     
-    if($count>0 || $count1>0)
+    if($count>0)
     {
         $user=mysqli_fetch_assoc($result);
+        $_SESSION['user']=$user['admin_id'];
+        $_SESSION['username'] = $user['admin_username'];
+        header("location: ../../Panel/");
+    }
+    else if($count1>0)
+    {
+        $user=mysqli_fetch_assoc($result1);
         $_SESSION['user']=$user['admin_id'];
         $_SESSION['username'] = $user['admin_username'];
         header("location: ../../Panel/");

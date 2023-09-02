@@ -94,7 +94,7 @@
                                         src="<?="../Panel/Books/$file_name";   ?>" id="PDFfile"
                                         type="application/pdf" frameBorder="0" scrolling="auto" height="650px"
                                         width="100%"></embed>
-                                        <input type="file" name="book_pdf" id="upload" value = "<?="../Panel/Books/$file_name"?>"  style="display: none;" accept="application/pdf" />
+                                        <input type="file" name="book_pdf" id="upload" style="display: none;" accept="application/pdf" />
 
                                 </div>
                                 <a name="pdf" class="btn btn-primary"

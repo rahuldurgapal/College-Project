@@ -94,8 +94,8 @@
                                         src="<?="../Panel/Books/$file_name";   ?>" id="PDFfile"
                                         type="application/pdf" frameBorder="0" scrolling="auto" height="650px"
                                         width="100%"></embed>
-                                        <input type="file" name="book_pdf" id="upload" style="display: none;" accept="application/pdf" />
-
+                                        <input type="file" name="book_pdf"  id="upload"  accept="application/pdf" />
+                                        <input type="hidden" name="file" value="<?php echo $file_name;  ?>"  >
                                 </div>
                                 <a name="pdf" class="btn btn-primary"
                                     style="width: 80%; margin: auto; margin-top: 10px;" id="uploadBOOK">Upload a book</a>
@@ -134,5 +134,7 @@
             };
         })
     })
+
+  
 
 </script>

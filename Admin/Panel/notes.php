@@ -51,7 +51,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Topic Name</th>
-                        <th scope="col">Author Name</th>
+                        <th scope="col">Teacher Name</th>
                         <th scope="col">Subject</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -59,24 +59,24 @@
                 <tbody>
                     <tr>
                         <th scope="row"></th>
-                        <form action="" method="post">
+                        <form action="../Panel/text-editor" method="post">
                             <td>
                                 <div class="input">
-                                    <input type="text" name="book_name" placeholder="Topic name">
+                                    <input type="text" name="book_name" placeholder="Topic name" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                    <input type="text" name="author_Name" placeholder="Author name">
+                                    <input type="text" name="teacher_Name" placeholder="Teacher name" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                    <input type="text" name="subject_name" placeholder="Subject name">
+                                    <input type="text" name="subject_name" placeholder="Subject name" required>
                                 </div>
                             </td>
                             <td>
-                                <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="right"
+                                <button type="submit" name="topic" class="btn btn-success" data-toggle="tooltip" data-placement="right"
                                 title="Add Notes"> <i class="fa fa-plus"></i> </button>
                             </td>
                         </form>

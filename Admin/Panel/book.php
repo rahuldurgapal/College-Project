@@ -76,21 +76,21 @@ include("../app/db_connection.php");
                         <form action="upload_book.php" method="post">
                             <td>
                                 <div class="input">
-                                    <input type="text" name="book_name" placeholder="Book name">
+                                    <input type="text" name="book_name" placeholder="Book name" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                    <input type="text" name="author_Name" placeholder="Author name">
+                                    <input type="text" name="author_name" placeholder="Author name" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                    <input type="text" name="subject_name" placeholder="Subject name">
+                                    <input type="text" name="subject_name" placeholder="Subject name" required>
                                 </div>
                             </td>
                             <td>
-                                <button type="submit" class="btn btn-success" data-toggle="tooltip" data-placement="bottom"
+                                <button type="submit" name="next" class="btn btn-success" data-toggle="tooltip" data-placement="bottom"
                                 title="Add Book"> <i class="fa fa-plus"></i> </button>
                             </td>
                         </form>

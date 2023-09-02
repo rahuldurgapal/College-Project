@@ -1,3 +1,16 @@
+<?php
+ if(isset($_POST['next']))
+ {
+    error_reporting(E_WARNING|E_NOTICE);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+     
+    $book_name = $_POST['book_name'];
+    $book_author = $_POST['author_name'];
+    $subject_name = $_POST['subject_name'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,17 +68,17 @@
                                         <div class="text-center">
                                             <h5>Book Name</h5>
                                             <div class="input">
-                                                <input type="text" name="book_name" required>
+                                                <input type="text" value="<?php echo $book_name; ?>" name="book_name" required>
                                             </div>
                                             <br>
                                             <h5>Author Name</h5>
                                             <div class="input">
-                                                <input type="text" name="book_author" required>
+                                                <input type="text" value="<?php echo $book_author;  ?>" name="book_author" required>
                                             </div>
                                             <br>
                                             <h5>Subject Name</h5>
                                             <div class="input">
-                                                <input type="text" name="subject_name" required>
+                                                <input type="text" value="<?php echo $subject_name; ?>" name="subject_name" required>
                                             </div>
                                         </div>
                                     </div>
@@ -110,3 +123,9 @@
     })
 
 </script>
+
+<?php
+ }
+ else 
+  header("location: book.php");
+?>

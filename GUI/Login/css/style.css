@@ -1,36 +1,159 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+    
 }
-body{
+.container-fluid{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 170, 255);
+    background-image: url("../img/loginbg.jpg");
+    background-size: cover;
+   
+   }
+   
+   /* ----------------navbar--------------- */
+   /* header {
+    position: sticky;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    top: 0;
 
 }
+
+header.scrolled {
+    background: rgb(255, 255, 255, 0.5);
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.4s ease-in-out;
+    backdrop-filter: blur(5px);
+
+}
+
+#navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: url(image/bg-image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.logo {
+    margin: 20px;
+    margin-left: 40px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.leftbox {
+    display: flex;
+    position: absolute;
+    left: 250px;
+    top: 30px;
+    margin: 10px;
+}
+
+.rightbox {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+}
+
+#navbar li a {
+    margin: 20px;
+    padding-bottom: 5px;
+    color: rgb(145, 41, 0);
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+#navbar li a:hover {
+    font-size: large;
+    border-bottom: 2px solid rgb(0, 0, 255);
+    color: rgb(0, 0, 255);
+
+}
+
+#navbar li a.active {
+    color: rgb(0, 0, 255);
+    border-bottom: 2px solid rgb(0, 0, 255);
+}
+
+#navbar button {
+    width: 130px;
+    height: 40px;
+    margin: 8px;
+    background: #ff6200;
+    color: #ffff;
+    cursor: pointer;
+    border: #ff6200;
+    border-radius: 20px;
+    font-size: medium;
+    font-weight: 700;
+}
+
+#navbar button:hover {
+
+    background-color: white;
+    color: #ff6200;
+    box-shadow: 10px 10px 10px -3px;
+}
+
+
+#navbar button.btn:hover {
+
+
+    background-color: white;
+  
+    color: #000054;
+}
+#navbar button.btn {
+    background-color: #2424fe;
+} */
+
+/*----------- Login--------------- */
 .login{
     width: 360px;
     height: min-content;
     padding: 20px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.516);
+    background: rgba(255, 255, 255, 0.121);
+    box-shadow: rgba(189, 223, 234, 0.39) 0px 0px 20px 20px;
     
-
 }
 .login h2{
     font-size: 36px;
     margin-bottom: 25px;
+    color: azure;
 
 }
 .login form{
     font-size: 20px;
+    color: azure;
 }
 .login form input[type="submit"]{
     font-size: 20px;
     margin-top: 15px;
+    border-radius: 15px;
+    
 }
 .login form label p{
     margin-top: 20px;
@@ -60,5 +183,16 @@ margin-top: 10px;
     color: black;
 }
 #Forget a:hover{
-    color: rgb(25, 25, 252);
+    color: rgb(208, 215, 215);
+}
+.intp{
+    border-radius: 15px;
+    padding: 9px;
+    background-color: rgb(214, 241, 245);
+}
+.intp:hover{
+    background-color: rgb(255, 255, 255);
+}
+.form-control.is-valid, .was-validated .form-control:valid {
+    background-image: none;
 }

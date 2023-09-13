@@ -1,7 +1,8 @@
 <?php
-
+session_start();
 if(isset($_SESSION['pass']))
 {
+    session_abort();
 
 ?>
 

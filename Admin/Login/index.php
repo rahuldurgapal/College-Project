@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+if(isset($_SESSION['username']))
+ header("location: ../Panel/");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +28,7 @@
             <img src="img/programming.svg" alt="">
         </div>
         <div class="login_container">
-            <form action="../app/http/auth.php" method="post">
+            <form action="../app/http/admin_auth.php" method="post">
                 <img class="profile" src="img/profile.svg" alt="">
                 <h2>Welcome</h2>
                 <?php
@@ -41,12 +49,38 @@
                 </div>
                 <div class="input_div two">
                     <div class="i">
-                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-lock" id="lock"></i>
+                        <i class="fa fa-eye" id="eye" style="cursor: pointer; display: none;"></i>
+
                     </div>
                     <div>
                         <h5>Password</h5>
-                        <input type="password" class="input" name="password">
+                        <input type="password" class="input" id="password" name="password">
+                        <!-- <i class="fa fa-eye" id="eye" style="cursor: pointer; display: none;"></i> -->
                     </div>
+                        <script>
+                            document.getElementById('password').addEventListener("input", () =>{
+                                if(document.getElementById('password').value.length > 0){
+                                    document.getElementById('eye').style.display = "block";
+                                    document.getElementById('lock').style.display = "none";
+                                }
+                                else{
+                                    document.getElementById('eye').style.display = "none";
+                                    document.getElementById('lock').style.display = "block";
+                                }
+                            })
+                            document.getElementById('eye').addEventListener("click", () => {
+                                if (document.getElementById('password').type === "password"){
+                                    document.getElementById('password').type = "text";
+                                    document.getElementById('eye').className = "fa fa-eye-slash";
+                                }
+                                else {
+                                    document.getElementById('password').type = "password";
+                                    document.getElementById('eye').className = "fa fa-eye";
+
+                                }                                
+                            })
+                        </script>
                 </div>
                 <a href="Forget_Password.php" id="link">Forgot Password?</a>
                 <input type="submit" value="Login" autocomplete="off" name="login" class="btn">

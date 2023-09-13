@@ -1,5 +1,5 @@
 <?php
- include ("db_connection.php");
+ include ("../Login/../app/db_connection.php");
  if(isset($_POST['verify']))
  {
     session_start();
@@ -18,9 +18,6 @@
         header("Location: Forget_Password.php?warn=$warn");
     }
  }
-
-
-
 ?>
 
 

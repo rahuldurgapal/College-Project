@@ -28,7 +28,7 @@
             <a href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a class="active" href="notes.php">Notes</a>
-            <a href="syllabus.php">Syllabus</a>
+            <a href="course.php">Course</a>
         </div>
     </div>
     <div class="content">
@@ -135,6 +135,7 @@
                 </tbody>
             </table>
         </div>
+        
     </div>
 </body>
 

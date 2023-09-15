@@ -38,7 +38,7 @@ include("../app/db_connection.php");
             <a href="index.php">Home</a>
             <a class="active" href="book.php">Books</a>
             <a href="notes.php">Notes</a>
-            <a href="syllabus.php">Syllabus</a>
+            <a href="course.php">Course</a>
             <!-- <a href="#about"></a> -->
         </div>
     </div>

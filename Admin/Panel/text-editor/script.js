@@ -186,6 +186,13 @@ saveButton.addEventListener("click", () => {
     
     const fileName = document.getElementById('fileName').value + ".html";
 
+    const file = document.getElementById('fileName').value;
+    const teacherName = document.getElementById('teacherName').value;
+    const subjectName = document.getElementById('subjectName').value;
+
+    console.log(subjectName);
+    console.log(teacherName);
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'save.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -194,7 +201,7 @@ saveButton.addEventListener("click", () => {
         alert(xhr.responseText); // Show a message indicating success or failure
         }
     };
-    xhr.send(`content=${encodeURIComponent(contentToSave)}&fileName=${encodeURIComponent(fileName)}`);
+    xhr.send(`content=${encodeURIComponent(contentToSave)} & fileName=${encodeURIComponent(fileName)} & file=${encodeURIComponent(file)} & subject=${encodeURIComponent(subjectName)} & teacherName=${encodeURIComponent(teacherName)}`);
 });
 
 openButton.addEventListener("click", () => {

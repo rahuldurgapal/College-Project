@@ -28,7 +28,7 @@
             <a href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a class="active" href="notes.php">Notes</a>
-            <a href="course.php">Course</a>
+            <a href="syllabus.php">Syllabus</a>
         </div>
     </div>
     <div class="content">
@@ -59,15 +59,15 @@
                 <tbody>
                     <tr>
                         <th scope="row"></th>
-                        <form action="../Panel/text-editor" method="post">
+                        <form action="../Panel/text-editor/index.php" method="post">
                             <td>
                                 <div class="input">
-                                    <input type="text" name="book_name" placeholder="Topic name" required>
+                                    <input type="text" name="topic_name" placeholder="Topic name" required>
                                 </div>
                             </td>
                             <td>
                                 <div class="input">
-                                    <input type="text" name="teacher_Name" placeholder="Teacher name" required>
+                                    <input type="text" name="teacher_name" placeholder="Teacher name" required>
                                 </div>
                             </td>
                             <td>
@@ -81,12 +81,21 @@
                             </td>
                         </form>
                     </tr>
-
+                 <?php           
+                 
+                        $sql = "select * from notes";
+                        $q = mysqli_query($con,$sql);
+                        if(mysqli_num_rows($q)>0)
+                        {
+                          while($row=mysqli_fetch_assoc($q))
+                          {
+                 
+                          ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
+                        <th scope="row"><?php echo $row['notes_id'];?></th>
+                        <td><a href=""><?php echo $row['notes_subject'];?></a></td>
+                        <td><?php echo $row['notes_author'];?></td>
+                        <td><?php echo $row['notes_topic'];?></td>
                         <td>
                             <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
                             title="Delete Notes"><i class="fa fa-trash"></i></a>
@@ -97,9 +106,14 @@
                             <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                             title="Update Page"><i class="fa fa-edit"></i></a>
                         </td>
-                    </tr>
+                 </tr>
+                 <?php  
+                }
+              }  else 
+                         echo "No data found";
 
-                    <tr>
+                         ?>
+                    <!-- <tr>
                         <th scope="row">2</th>
                         <td><a href="">Topic name</a></td>
                         <td>Teacher Name</td>
@@ -131,11 +145,43 @@
                             <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                             title="Update Page"><i class="fa fa-edit"></i></a>
                         </td>
+                    </tr> -->
+                      <!-- <tr>
+                        <th scope="row">4</th>
+                        <td><a href="">Topic name</a></td>
+                        <td>Teacher Name</td>
+                        <td>Related subject</td>
+                        <td>
+                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
+                            title="Delete Notes"><i class="fa fa-trash"></i></a>
+                            &nbsp
+                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
+                                title="View Page"><i class="fa fa-eye"></i></a>
+                            &nbsp
+                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
+                            title="Update Page"><i class="fa fa-edit"></i></a>
+                        </td>
                     </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td><a href="">Topic name</a></td>
+                        <td>Teacher Name</td>
+                        <td>Related subject</td>
+                        <td>
+                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
+                            title="Delete Notes"><i class="fa fa-trash"></i></a>
+                            &nbsp
+                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
+                                title="View Page"><i class="fa fa-eye"></i></a>
+                            &nbsp
+                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
+                            title="Update Page"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr> -->
+              
                 </tbody>
             </table>
         </div>
-        
     </div>
 </body>
 

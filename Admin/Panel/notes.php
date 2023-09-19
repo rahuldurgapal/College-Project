@@ -95,7 +95,7 @@
                         <th scope="row"><?php echo $row['notes_id'];?></th>
                         <td><a href=""><?php echo $row['notes_topic'];?></a></td>
                         <td><?php echo $row['notes_author'];?></td>
-                        <td><?php echo $row['notes_sbuject'];?></td>
+                        <td><?php echo $row['notes_subject'];?></td>
                         <td>
                             <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
                             title="Delete Notes"><i class="fa fa-trash"></i></a>

@@ -136,7 +136,7 @@ const highlighterRemover = (className) => {
     });
 };
 
-
+console.log(9);
 saveButton.addEventListener("click", () => {
     // // Function to save content as HTML
     // const content = writingArea.innerHTML; // Get the content from the editor
@@ -190,6 +190,8 @@ saveButton.addEventListener("click", () => {
     const teacherName = document.getElementById('teacherName').value;
     const subjectName = document.getElementById('subjectName').value;
 
+    console.log(document.getElementById('subjectName').value);
+    console.log(4+5);
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'save.php', true);
@@ -201,27 +203,28 @@ saveButton.addEventListener("click", () => {
     };
     xhr.send(`content=${encodeURIComponent(contentToSave)}&fileName=${encodeURIComponent(fileName)}&file=${encodeURIComponent(file)}&subject=${encodeURIComponent(subjectName)}&teacherName=${encodeURIComponent(teacherName)}`);
 });
-
-openButton.addEventListener("click", () => {
-    const fileInput = document.getElementById('fileInput');
-    fileInput.click();
+console.log(subjectName);
+console.log(teacherName);
+// openButton.addEventListener("click", () => {
+//     const fileInput = document.getElementById('fileInput');
+//     fileInput.click();
     
-    fileInput.addEventListener("change", () => {
-        const file = fileInput.files[0];
+//     fileInput.addEventListener("change", () => {
+//         const file = fileInput.files[0];
 
-        if (file) {
-            const reader = new FileReader();
+//         if (file) {
+//             const reader = new FileReader();
 
-            reader.onload = function (event) {
-                const fileContent = event.target.result;
-                const textInput = document.getElementById('text-input');
-                textInput.innerHTML += fileContent;
-                append = true;
-            };
-            reader.readAsText(file);
-    }});
+//             reader.onload = function (event) {
+//                 const fileContent = event.target.result;
+//                 const textInput = document.getElementById('text-input');
+//                 textInput.innerHTML += fileContent;
+//                 append = true;
+//             };
+//             reader.readAsText(file);
+//     }});
   
-});
+// });
 
 window.addEventListener('beforeunload', (e) => {
     e.preventDefault();

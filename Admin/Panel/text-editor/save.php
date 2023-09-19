@@ -3,14 +3,16 @@ include("../../app/db_connection.php");
 if (isset($_POST['content'])) {
     $content = $_POST['content'];
     $fileName = $_POST['fileName'];
-    $subject =  $_POST['subjectName'];
+    $subject =  $_POST['subject'];
     $teacher =  $_POST['teacherName'];
     $file = $_POST['file'];
+
+
     $filePath = '../../Panel/Books/' . $fileName; // Specify the directory where you want to save the file
     
     
     if (file_put_contents($filePath, $content)) {
-        echo $teacher;
+        echo $subject;
     } else {
         echo 'Error saving file.';
     }

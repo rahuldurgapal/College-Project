@@ -59,7 +59,7 @@ form h2{
     bottom: -2px;
     width: 0px;
     height: 2px;
-    background-color: #cea336;
+    background-color: #f99090;
     transition: .3s;
 }
 .div-input:after{
@@ -69,18 +69,21 @@ form h2{
         left: 50%;
     }
     .div-input.focus .i i{
-    color: #cea336;
+    color: #f99090;
 }
 .div-input.focus div h5{
-    top: -5px;
+    top: -2px;
     font-size: 15px;
-    color: #f1d377;
+    color: #f99090;
 }
 .div-input.focus:after,  .div-input.focus:before{
     width: 50%;
 }
+.div-input.ones{
+    margin-top: 15px;
+}
 .div-input.one{
-    margin-top: 0;
+    margin-top: 25px;
 }
 .div-input.two{
     margin-bottom: 4px;
@@ -130,7 +133,7 @@ input{
     height: 50px;
     border: none;
     border-radius: 20px;
-    background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
+    background-image: linear-gradient(to right, #e87171, #ef5959, #f79696);
     color: white;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -155,7 +158,7 @@ input{
             display: inline-block;
            background-size: 200%;
             line-height: 20px;
-            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
+            background-image: linear-gradient(to right, #e87171, #ef5959, #f79696);
             color: #fdfdfd;
             text-decoration: none;
             transition: 0.3s;
@@ -191,12 +194,23 @@ input{
         .input-div > div h5{
             font-size: 1rem;
         }
+        .div-input:after, .div-input:before{
+            background-color: #feca2d;
+        }
+        .div-input.focus .i i{
+            color: #feca2d;
+        }
+        .div-input.focus div h5{
+            color: #feca2d;
+        }
         .btn{
             font-size: 1rem;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         .google-btn{
             font-size: .8rem;
             font-family:Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         .avatar{
             width: 90px;
@@ -233,12 +247,23 @@ input{
         .input-div > div h5{
             font-size: 1rem;
         }
+        .div-input:after, .div-input:before{
+            background-color: #feca2d;
+        }
+        .div-input.focus .i i{
+            color: #feca2d;
+        }
+        .div-input.focus div h5{
+            color: #feca2d;
+        }
         .btn{
             font-size: 1.3rem;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         .google-btn{
             font-size: .7rem;
             font-family:Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         
         .b-img{
@@ -277,12 +302,23 @@ input{
         .input-div > div h5{
             font-size: 1.1rem;
         }
+        .div-input:after, .div-input:before{
+            background-color: #feca2d;
+        }
+        .div-input.focus .i i{
+            color: #feca2d;
+        }
+        .div-input.focus div h5{
+            color: #feca2d;
+        }
         .btn{
             font-size: 1.2rem;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         .google-btn{
             font-size: .8rem;
             font-family:Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         .container{
            justify-content: center;
@@ -323,6 +359,24 @@ input{
             padding: 5vh;
             border-radius: 8vh;
         }
+        .div-input:after, .div-input:before{
+            background-color: #feca2d;
+        }
+        .div-input.focus .i i{
+            color: #feca2d;
+        }
+        .div-input.focus div h5{
+            color: #feca2d;
+        }
+        .btn{
+            font-size: 1.2rem;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
+        }
+        .google-btn{
+            font-size: .8rem;
+            font-family:Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
+        }
         form h2{
             color: #feca2d;
             font-size: 2.2rem;
@@ -360,6 +414,24 @@ input{
         form h2{
             color: #feca2d;
 
+        }
+        .div-input:after, .div-input:before{
+            background-color: #feca2d;
+        }
+        .div-input.focus .i i{
+            color: #feca2d;
+        }
+        .div-input.focus div h5{
+            color: #feca2d;
+        }
+        .btn{
+            
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
+        }
+        .google-btn{
+           
+            font-family:Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #f1d377, #f1c044, #f6e57b);
         }
         .sign_container{
             width: 100%;

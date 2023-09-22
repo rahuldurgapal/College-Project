@@ -1,4 +1,14 @@
 <?php
+error_reporting(E_WARNING|E_NOTICE);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+    $topic_name=$_POST['topic_name'];
+    $teacher_name = $_POST['teacher_name'];
+    $subject = $_POST['subject_name'];
+
+    
 
 
 ?>
@@ -25,9 +35,11 @@
 <body>
     <div class="container">
         <div class="save">
-            <input type="text" id="fileName" value="index">
+            <input type="text" id="fileName" value="<?php echo $topic_name; ?>">
+            <input type="hidden" id="teacherName" value="<?php echo $teacher_name;   ?>">
+            <input type="hidden" id="subjectName" name="subjectName" value="<?php echo $subject;   ?>">
             <div>  
-                <button id="openFile" class="openFile"><i class="fa fa-file"> OPEN</i></button>  
+                <!-- <button id="openFile" class="openFile"><i class="fa fa-file"> OPEN</i></button>   -->
                 <input type="file" id="fileInput" style="display: none;">   
                 <button id="saveFile" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
             </div>

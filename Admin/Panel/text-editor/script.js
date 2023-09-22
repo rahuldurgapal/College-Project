@@ -199,6 +199,8 @@ saveButton.addEventListener("click", () => {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
         alert(xhr.responseText); // Show a message indicating success or failure
+        location.replace("../../Panel/notes.php");
+
         }
     };
     xhr.send(`content=${encodeURIComponent(contentToSave)}&fileName=${encodeURIComponent(fileName)}&file=${encodeURIComponent(file)}&subject=${encodeURIComponent(subjectName)}&teacherName=${encodeURIComponent(teacherName)}`);

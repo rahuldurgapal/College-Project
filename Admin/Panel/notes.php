@@ -97,11 +97,11 @@
                         <td><?php echo $row['notes_author'];?></td>
                         <td><?php echo $row['notes_subject'];?></td>
                         <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
+                            <a href="../app/http/Notes/delete_note.php?id=<?php echo $row['notes_id']; ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
+                            title="Delete Notes" onclick="return confirm('Are you sure you want to delete?')"> <i class="fa fa-trash"></i></a>
                             &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
+                            <a href="view_notes.php?id=<?php  echo $row['notes_id']; ?>" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
+                            target="_blank" title="View Page"><i class="fa fa-eye"></i></a>
                             &nbsp
                             <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                             title="Update Page"><i class="fa fa-edit"></i></a>
@@ -113,71 +113,6 @@
                          echo "No data found";
 
                          ?>
-                    <!-- <tr>
-                        <th scope="row">2</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Page"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Page"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr> -->
-                      <!-- <tr>
-                        <th scope="row">4</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Page"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td><a href="">Topic name</a></td>
-                        <td>Teacher Name</td>
-                        <td>Related subject</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Notes"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Page"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Page"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr> -->
               
                 </tbody>
             </table>

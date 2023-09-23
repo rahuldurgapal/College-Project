@@ -12,7 +12,7 @@
     <div class="container">
     
         <div class="sign-container">
-            <form>
+            <form action="../../Admin/app/http/user_signup.php" method="post">
                 <img src="/Students/signup/img/user.png" alt="" class="avatar">
                  <h2>Sign up</h2>
                  <div class="div-input ones">
@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <h5>Full name</h5>
-                        <input type="text" class="input-area"/>
+                        <input type="text" name="full_name" class="input-area" required/>
                     </div>
                 </div>
                     <div class="div-input two">
@@ -29,8 +29,8 @@
                             <i class="fa fa-user"></i>
                         </div>
                         <div>
-                            <h5>Username</h5>
-                            <input type="text" class="input-area"/>
+                            <h5>Email</h5>
+                            <input type="email" name="email" class="input-area" required/>
                         </div>
 
                     </div>
@@ -40,18 +40,19 @@
                         </div>
                         <div>
                             <h5>Password</h5>
-                            <input type="password" class="input-area"/>
+                            <input type="password" name="password" class="input-area" required/>
                         </div>
 
                     </div>
                     
                     <div>
-                        <input type="button" class="btn" onclick="location.href='/Students/signup/otpverify.html';" value="Sign up">
+                        <input type="submit" name="signup" class="btn" value="Sign up">
                     </div>
                         <div>
                     <a href="#" class="google-btn google"><i class="google-i fa fa-google fa-fw">
                     </i>Login with google+
                     </a>
+                    
                 </div>
                 
             </form>

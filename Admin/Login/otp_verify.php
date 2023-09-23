@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_WARNING|E_NOTICE);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 if(isset($_SESSION['otp']))
 {
@@ -77,5 +81,5 @@ if(isset($_SESSION['otp']))
 // session_unset();
 }
 else
- header("Location: Forget_Password.php");
+ header("Location: index.php");
 ?>

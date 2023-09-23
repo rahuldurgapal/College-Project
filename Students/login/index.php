@@ -13,7 +13,7 @@
      <img src="./img/loginbg.svg" alt="" class="wave">
      <div class="container">        
      <div class="login_container">
-            <form action="login.html">
+            <form action="../../Admin/app/http/user_auth.php" method="post">
                 <img class="avatar" src="./img/login avatar.png" >
                 <h2>Welcome</h2>
                 <div class="input-div one ">
@@ -21,8 +21,8 @@
                         <i class="fa fa-user"></i>
                     </div>
                     <div>
-                        <h5>Username</h5>
-                        <input class="input" type="text">
+                        <h5>Email</h5>
+                        <input class="input" type="email" name="user_email" required>
                     </div>
                 </div>
                 <div class="input-div two">
@@ -31,14 +31,14 @@
                     </div>
                     <div>
                         <h5>Password</h5>
-                        <input class="input" type="password">
+                        <input class="input" type="password" name="user_password" required>
                 
                     </div>
 
                 </div>
                 <div>
-                    <a href="/Students/login/forgetpass.html">Forget Password</a>
-                    <input type="button" onclick="location.href='/Students/index.html';" class="btn" value="Login">
+                    <a href="forgetpass.php">Forget Password</a>
+                    <input type="submit" name="user_login" class="btn" value="Login">
                     
                     <a href="#" class="google-btn google">
                         <i class="google-i fa fa-google fa-fw">
@@ -50,6 +50,6 @@
         
      </div>
     </div>
-     <script src="./js/login.js"></script>
+     <script src="js/login.js"></script>
 </body>
 </html>

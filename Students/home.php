@@ -20,11 +20,11 @@
     <div id="preloader"></div>
     <section class="header">
         <nav>
-            <a href="index.html"><img src="icons\new-explorer.png" alt="#"></a>
+            <a href="home.html"><img src="icons\new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="home.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="notification.html">Notifications</a></li>
@@ -40,7 +40,18 @@
             <p> "Empowering RSMT Students Through Knowledge: <span>Your Ultimate Academic Explorer </span> <br> Discover Notes,
                 Papers, and Insights for MCA, BBA, BCA, and MBA Courses."
             </p>
-            <a href="login/login.html" class="hero-btn">Sign in </a>
+        <?php 
+          session_start();
+          if(isset($_SESSION['std_name'])){
+           echo "<h2>Welcome</h2>";
+           echo '<h1>'. $_SESSION['std_name'] .'</h1>';
+           echo "<a href='login/logout.php' class='hero-btn'> Log out</a>";
+          }
+          
+          else
+           echo "<a href='login/' class='hero-btn'> Sign in </a>";
+           ?>
+          
         </div>
     </section>
     <!-- COURSES -->
@@ -57,7 +68,7 @@
                 </a>
             </div>
 
-            <div class="course-col">
+            <!-- <div class="course-col">
                 <a href="MBAcontent.html">
                 <h3>MBA</h3>
                 <p>Provide a comprehensive overview of the MBA program, including its duration, eligibility criteria,
@@ -72,8 +83,8 @@
                     Explorer.Providing all inforations like, its duration, eligibility criteria.
                 </p>
                 </a>
-            </div>
-            <div class="course-col">
+            </div>  -->
+            <div class="course-col"> 
                 <a href="BCAcontent.html">
                 <h3>BCA</h3>
                 <p>"Unveiling the Digital Realm: Empowering Futures with Explorer's BCA Insights - Explore, Code,
@@ -178,11 +189,16 @@
         </div>
     </section>
     <!-- Call To Action -->
+    <?php
+     if(!isset($_SESSION['std_name']))
+     {
+   ?>
     <section class="cta">
         <h1>Please Login to access our exclusive range of resources and <br> unlock a world of knowledge tailored to
             your educational journey.</h1>
         <a href="login/login.html" class="hero-btn"> Login Now</a>
     </section>
+    <?php  } ?>
     <!-- Footer -->
     <section class="footer">
         <h4>About Us</h4>

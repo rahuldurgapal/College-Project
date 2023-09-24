@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <h5>Full name</h5>
-                        <input type="text" name="full_name" class="input-area" required/>
+                        <input type="text" name="full_name" class="input-area" />
                     </div>
                 </div>
                     <div class="div-input two">
@@ -30,7 +30,7 @@
                         </div>
                         <div>
                             <h5>Email</h5>
-                            <input type="email" name="email" class="input-area" required/>
+                            <input type="email" name="email" class="input-area"/>
                         </div>
 
                     </div>
@@ -40,7 +40,7 @@
                         </div>
                         <div>
                             <h5>Password</h5>
-                            <input type="password" name="password" class="input-area" required/>
+                            <input type="password" name="password" class="input-area"/>
                         </div>
 
                     </div>

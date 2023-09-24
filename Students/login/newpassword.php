@@ -13,12 +13,22 @@ session_start();
    $pass = $_POST['new_pass'];
    $conf_pass = $_POST['new_confirm_pass'];
 
-   if($pass!=$conf_pass)
+$number = preg_match('@[0-9]@', $pass);
+$uppercase = preg_match('@[A-Z]@', $pass);
+$lowercase = preg_match('@[a-z]@', $pass);
+$specialChars = preg_match('@[^\w]@', $pass);
+
+if((strlen($pass) < 8) || !$number || !$uppercase || !$lowercase || !$specialChars) {
+    $warn = "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+    header("location: newpassword.php?warn=$warn");
+   }
+
+  else if($pass!=$conf_pass)
    {
         $warn = "the passwords are not match";
         header("Location: newpassword.php?warn=$warn");
    }
-  
+  else{
   $sql = "update students set student_password = '$pass' where student_email = '$email'";
   $q = mysqli_query($con,$sql);
   if($q)
@@ -28,10 +38,13 @@ session_start();
     $_SESSION['pass'] = $pass;
     header("location: passwordchange.php");
   }
-  else
-   echo "operation failed";
+  else 
+   echo "opearation failed";
+}
+}  
+  
 
-    }
+    
 ?>
 
 

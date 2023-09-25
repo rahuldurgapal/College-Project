@@ -64,13 +64,6 @@ if((strlen($pass) < 8) || !$number || !$uppercase || !$lowercase || !$specialCha
     <div class="reset-container">
            <form class="reset-form" action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="POST">
                <img class="avatar" src="img/reset-password.png" />
-               <?php
-                    if(isset($_GET['warn'])){
-                        echo '<div class="alert alert-danger" role="alert">'.
-                                $_GET['warn'].
-                             '</div>';
-                    }
-                    ?>
                <h3>Reset account password</h3>
                <div class="input-div one ">
                    <div class="i">

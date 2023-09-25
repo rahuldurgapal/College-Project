@@ -48,13 +48,6 @@ if(isset($_SESSION['std_otp']))
      <div class="login_container">
             <form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="POST">
                 <img class="avatar" src="img/otppng.png" >
-                <?php
-                    if(isset($_GET['warn'])){
-                        echo '<div class="alert alert-danger" role="alert">'.
-                                $_GET['warn'].
-                             '</div>';
-                    }
-                ?>
                 <h4>Please enter the one time Password to verify your account</h4>
                 <div class="input-div one ">
                     <div class="i">

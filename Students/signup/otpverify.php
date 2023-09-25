@@ -46,13 +46,6 @@ if(isset($_SESSION['email_otp']))
         <div class="container">        
         <div class="login_container">
                <form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post" style="margin-top: 25%;">   
-               <?php
-                    if(isset($_GET['warn'])){
-                        echo '<div class="alert alert-danger" role="alert">'.
-                                $_GET['warn'].
-                             '</div>';
-                    }
-                ?>
                    <img class="avatar" src="../login/img/otppng.png" >
                    <h4>Please enter the one time Password to verify your account</h4>
                    <div class="div-input one ">

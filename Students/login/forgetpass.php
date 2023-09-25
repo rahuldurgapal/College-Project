@@ -44,13 +44,8 @@
         
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 <img class="avatar" src="img/forgetpass.png" >
-                <?php
-                    if(isset($_GET['warn'])){
-                        echo '<div class="alert alert-danger" role="alert">'.
-                                $_GET['warn'].
-                             '</div>';
-                    }
-                ?>
+               
+                
                 <h2 style="font-size: 25px;">forget password</h2>
                 <div class="input-div one ">
                     <div class="i">

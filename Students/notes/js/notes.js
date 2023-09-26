@@ -11,3 +11,7 @@ var loader = document.getElementById("preloader");
 window.addEventListener("load", function(){
     loader.style.display = "none";
 })
+
+//pdf date publish
+
+document.getElementById('publishDate').textContent = new Date().toLocaleDateString();

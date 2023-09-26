@@ -271,4 +271,58 @@ h3 {
         padding: 10px;
         font-size: 20px;
     }
+    h6{
+        font-size: 1.5rem;
+    }
+}
+
+/* Notes */
+h6{
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+h3{
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+.container{
+    min-height: 40px;
+    padding: 20px 30px;
+    width: auto;
+    background-color: aliceblue;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow:  5px 5px  #5d3c3c,
+    -5px -5px  #fff0f0;
+    margin-bottom: 30px;
+}
+.notes-container{
+    width: 100%;
+    background-color: #e0e0e0;
+}
+.content{
+    margin-bottom: 25px;
+}
+.dots{
+    text-align: end;
+    border-radius: 14PX;
+    box-sizing: border-box;
+    width: 80px;
+    float: right;
+    margin-right: 40px;
+  
+}
+.dots:hover{
+    background-color: #f9ecec;
+}
+.readmore{
+    float: right;
+
+    
 }

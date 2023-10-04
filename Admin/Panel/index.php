@@ -27,7 +27,7 @@
             <a class="active" href="home.php">Home</a>
             <a href="book.php">Books</a>
             <a href="notes.php">Notes</a>
-            <a href="course.php">Course</a>
+            <!-- <a href="course.php">Course</a> -->
         </div>
     </div>
 </body>

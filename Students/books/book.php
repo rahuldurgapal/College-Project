@@ -29,7 +29,7 @@
             </div>
             <i class="fa-solid fa fa-bars" onclick="showmenu()"></i>
         </nav>
-        
+        <div class="container d-flex justify-content-between flex-wrap">
       <?php  
       error_reporting(E_WARNING|E_NOTICE);
       ini_set('display_errors', 1);
@@ -43,7 +43,7 @@
              
       
       ?>
-        <div class="container d-flex justify-content-between flex-wrap">
+        
             <div class="card ">
                 <div class="pdf-preview" data-pdf-url="../../Admin/Panel/Books/<?php echo $res['book_pdf'];  ?>"></div>
                 <div class="box">

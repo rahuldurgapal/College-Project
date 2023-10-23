@@ -7,7 +7,12 @@
  $password = "Explorer@321";
  $database = "explorer_404";
 
- $con = mysqli_connect($host,$username,$password,$database);
+//  $host = "localhost:3306";
+//  $username = "root";
+//  $password = "";
+//  $database = "test";
+
+//  $con = mysqli_connect($host,$username,$password,$database);
  
  if(!$con)
   die("Connection Failed");

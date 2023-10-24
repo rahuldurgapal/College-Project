@@ -35,18 +35,33 @@
             </form>
 
         <div class="container d-flex justify-content-between flex-wrap">
-            <div class="card ">
-                <h3>Topic Name</h3>
+      <?php  
+      error_reporting(E_WARNING|E_NOTICE);
+      ini_set('display_errors', 1);
+      ini_set('display_startup_errors', 1);
+      error_reporting(E_ALL);
+        include("../../Admin/app/db_connection.php");
+        $sql = "";
+        if(isset($_POST['data'])){
+            $data = $_POST['data'];
+            $sql = "SELECT * FROM notes WHERE notes_topic LIKE '%$data%' OR notes_author LIKE '%$data%' OR notes_subject LIKE '%$data%'";
+        }
+        else $sql = "Select * from notes";
+               $q = mysqli_query($con,$sql);
+               while($row=mysqli_fetch_assoc($q)){
+      ?>
+    
+        <div class="card ">
+                <h3><?= $row['notes_topic']?></h3>
                 <hr>
                 <div class="box">
-                    <p><span>Subject Name :</span> subject name</p>
-                    <p><span>Author Name :</span> Author</p>
-                    <p><span>Subject Name :</span> Subject</p>
+                    <p><span>Subject Name :</span> <?=$row['notes_author']?></p>
+                    <p><span>Author Name :</span> <?=$row['notes_subject']?></p>
                     <button class="btn btn-primary">View</button>
                 </div>
             </div>
 
-
+            <?php  }  ?>
         </div>
         
         <script src="js/notes.js"></script>

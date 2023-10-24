@@ -7,6 +7,11 @@
  $password = "Explorer@321";
  $database = "explorer_404";
 
+//  $host = "localhost";
+//  $username = "root";
+//  $password = "";
+//  $database = "explorer_404";
+
  $con = mysqli_connect($host,$username,$password,$database);
  
  if(!$con)

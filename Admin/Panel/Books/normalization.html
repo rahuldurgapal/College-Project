@@ -1,0 +1,74 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>normalization</title>
+        </head>
+        <body>
+            <h1 class="h1">Normalization</h1>
+<p>A large database defined as a single relation may result in data duplication. This repetition of data may result in:</p>
+<ul class="points"><li>Making relations very large.</li><li>It isn't easy to maintain and update data as it would involve searching many records in relation.</li><li>Wastage and poor utilization of disk space and resources.</li><li>The likelihood of errors and inconsistencies increases.</li></ul>
+<p>So to handle these problems, we should analyze and decompose the 
+relations with redundant data into smaller, simpler, and well-structured
+ relations that are satisfy desirable properties. Normalization is a 
+process of decomposing the relations into relations with fewer 
+attributes.</p>
+<h2 class="h2">What is Normalization?</h2>
+<ul class="points"><li>Normalization is the process of organizing the data in the database.</li><li>Normalization is used to minimize the redundancy from a relation or 
+set of relations. It is also used to eliminate undesirable 
+characteristics like Insertion, Update, and Deletion Anomalies.</li><li>Normalization divides the larger table into smaller and links them using relationships.</li><li>The normal form is used to reduce redundancy from the database table.</li></ul>
+<p>Why do we need Normalization?</p>
+<p>The main reason for normalizing the relations is removing these 
+anomalies. Failure to eliminate anomalies leads to data redundancy and 
+can cause data integrity and other problems as the database grows. 
+Normalization consists of a series of guidelines that helps to guide you
+ in creating a good database structure.</p>
+<p><strong>Data modification anomalies can be categorized into three types:</strong></p>
+<ul class="points"><li><strong>Insertion Anomaly:</strong> Insertion Anomaly refers to when one cannot insert a new tuple into a relationship due to lack of data.</li><li><strong>Deletion Anomaly:</strong> The delete anomaly refers to the 
+situation where the deletion of data results in the unintended loss of 
+some other important data.</li><li><strong>Updatation Anomaly:</strong> The update anomaly is when an update of a single data value requires multiple rows of data to be updated.</li></ul>
+<h2 class="h2">Types of Normal Forms:</h2>
+<p>Normalization works through a series of stages called Normal forms. 
+The normal forms apply to individual relations. The relation is said to 
+be in particular normal form if it satisfies constraints.</p>
+<p><strong>Following are the various types of Normal forms:</strong></p>
+<img src="https://static.javatpoint.com/dbms/images/dbms-normalization.png" alt="DBMS Normalization">
+<br>
+<table class="alt">
+<tbody><tr>
+<th>Normal Form</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><a href="https://www.javatpoint.com/dbms-first-normal-form">1NF</a></td>
+<td>A relation is in 1NF if it contains an atomic value.</td>
+</tr>
+<tr>
+<td><a href="https://www.javatpoint.com/dbms-second-normal-form">2NF</a></td>
+<td>A relation will be in 2NF if it is in 1NF and all non-key attributes are fully functional dependent on the primary key.</td>
+</tr>
+<tr>
+<td><a href="https://www.javatpoint.com/dbms-third-normal-form">3NF</a></td>
+<td>A relation will be in 3NF if it is in 2NF and no transition dependency exists.</td>
+</tr>
+<tr>
+<td>BCNF</td>
+<td>A stronger definition of 3NF is known as Boyce Codd's normal form.</td>
+</tr>
+<tr>
+<td><a href="https://www.javatpoint.com/dbms-forth-normal-form">4NF</a></td>
+<td>A relation will be in 4NF if it is in Boyce Codd's normal form and has no multi-valued dependency.</td>
+</tr>
+<tr>
+<td><a href="https://www.javatpoint.com/dbms-fifth-normal-form">5NF</a></td>
+<td>A relation is in 5NF. If it is in 4NF and does not contain any join dependency, joining should be lossless.</td>
+</tr>
+</tbody></table>
+<h2 class="h2">Advantages of Normalization</h2>
+<ul class="points"><li>Normalization helps to minimize data redundancy.</li><li>Greater overall database organization.</li><li>Data consistency within the database.</li><li>Much more flexible database design.</li><li>Enforces the concept of relational integrity.</li></ul>
+<h2 class="h2">Disadvantages of Normalization</h2>
+<ul class="points"><li>You cannot start building the database before knowing what the user needs.</li><li>The performance degrades when normalizing the relations to higher normal forms, i.e., 4NF, 5NF.</li><li>It is very time-consuming and difficult to normalize relations of a higher degree.</li><li>Careless decomposition may lead to a bad database design, leading to serious problems.</li></ul>
+        </body>
+        </html>

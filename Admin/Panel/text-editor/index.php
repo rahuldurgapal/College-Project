@@ -3,14 +3,35 @@ error_reporting(E_WARNING|E_NOTICE);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+include("../../app/db_connection.php");
+$topic_name = "";
+$teacher_name = "";
+$subject_name = "";
+$update = false;
+    if(isset($_GET['id'])){
+        $update = true;
+        $result = mysqli_query($con,"SELECT * FROM notes WHERE notes_id = $_GET[id]");
+        if (!$result) {
+            echo 'Could not run query: ' . mysql_error();
+            exit;
+        }
+        $row = mysqli_fetch_assoc($result);
+        $topic_name = "$row[notes_topic]";
+        $teacher_name = "$row[notes_author]";
+        $subject_name = "$row[notes_subject]";
+        $html_url = '../Notes/'.$row['notes_link'];
 
-    $topic_name=$_POST['topic_name'];
-    $teacher_name = $_POST['teacher_name'];
-    $subject = $_POST['subject_name'];
+        $html_content = file_get_contents($html_url);
 
-    
-
-
+        if ($html_content === false) {
+            die('Failed to fetch the HTML content.');
+        }
+        
+    }else{
+        $topic_name = $_POST['topic_name'];
+        $teacher_name = $_POST['teacher_name'];
+        $subject = $_POST['subject_name'];
+    }
 ?>
 
 
@@ -36,12 +57,13 @@ error_reporting(E_ALL);
     <div class="container">
         <div class="save">
             <input type="text" id="fileName" value="<?php echo $topic_name; ?>">
-            <input type="hidden" id="teacherName" value="<?php echo $teacher_name;   ?>">
-            <input type="hidden" id="subjectName" name="subjectName" value="<?php echo $subject;   ?>">
-            <div>  
-                <!-- <button id="openFile" class="openFile"><i class="fa fa-file"> OPEN</i></button>   -->
-                <input type="file" id="fileInput" style="display: none;">   
-                <button id="saveFile" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
+
+            <div> 
+                <?php if($update === true){ ?>
+                    <button id="updateFile" class="saveFile"><i class="fa fa-save"> Update</i></button>
+                <?php }else{ ?>
+                    <button id="saveFile" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
+                <?php } ?>
             </div>
         </div>
         <div class="options">
@@ -138,8 +160,242 @@ error_reporting(E_ALL);
         </div>
         <div id="text-input" contenteditable="true"></div>
     </div>
-    <!--Script-->
-    <script src="script.js"></script>
+
 </body>
 
 </html>
+
+
+<script>
+    let optionsButtons = document.querySelectorAll(".option-button");
+    let advancedOptionButton = document.querySelectorAll(".adv-option-button");
+    let fontName = document.getElementById("fontName");
+    let fontSizeRef = document.getElementById("fontSize");
+    let writingArea = document.getElementById("text-input");
+    let linkButton = document.getElementById("createLink");
+    let imageButton = document.getElementById("createImage");
+    let alignButtons = document.querySelectorAll(".align");
+    let spacingButtons = document.querySelectorAll(".spacing");
+    let formatButtons = document.querySelectorAll(".format");
+    let scriptButtons = document.querySelectorAll(".script");
+    let saveButton = document.getElementById("saveFile");
+    let updateButton = document.getElementById("updateFile");
+
+    let append = false;
+
+    //List of fontlist
+    let fontList = [
+        "Arial",
+        "Verdana",
+        "Times New Roman",
+        "Garamond",
+        "Georgia",
+        "Courier New",
+        "cursive",
+    ];
+
+    //Initial Settings
+    const initializer = () => {
+        //function calls for highlighting buttons
+        //No highlights for link, unlink,lists, undo,redo since they are one time operations
+        highlighter(alignButtons, true);
+        highlighter(spacingButtons, true);
+        highlighter(formatButtons, false);
+        highlighter(scriptButtons, true);
+
+        //create options for font names
+        fontList.map((value) => {
+            let option = document.createElement("option");
+            option.value = value;
+            option.innerHTML = value;
+            fontName.appendChild(option);
+        });
+
+        //fontSize allows only till 7
+        for (let i = 1; i <= 7; i++) {
+            let option = document.createElement("option");
+            option.value = i;
+            option.innerHTML = i;
+            fontSizeRef.appendChild(option);
+        }
+
+        //default size
+        fontSizeRef.value = 3;
+    };
+
+    //main logic
+    const modifyText = (command, defaultUi, value) => {
+        //execCommand executes command on selected text
+        document.execCommand(command, defaultUi, value);
+    };
+
+    //For basic operations which don't need value parameter
+    optionsButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            modifyText(button.id, false, null);
+        });
+    });
+
+    //options that require value parameter (e.g colors, fonts)
+    advancedOptionButton.forEach((button) => {
+        button.addEventListener("change", () => {
+            modifyText(button.id, false, button.value);
+        });
+    });
+
+    //link
+    linkButton.addEventListener("click", () => {
+        let userLink = prompt("Enter a URL");
+        //if link has http then pass directly else add https
+        if (/http/i.test(userLink)) {
+            modifyText(linkButton.id, false, userLink);
+        } else {
+            userLink = "http://" + userLink;
+            modifyText(linkButton.id, false, userLink);
+        }
+    });
+
+    imageButton.addEventListener("click", () => {
+        let alt = prompt('Please enter image alt text:');
+        if (alt !== null) {
+            let url = prompt('Please enter image URL:');
+            if (url !== null) {
+                let width = prompt('Enter image width:', 'auto');
+                if (width !== null) {
+                    let imgTag = '<img src="' + (url.length > 0 ? url : '') + '"' +
+                        (width !== 'auto' ? ' width="' + width + '"' : '') +
+                        (alt.length > 0 ? ' alt="' + alt + '"' : '') +
+                        '>';
+                    document.execCommand('insertHTML', false, imgTag);
+                }
+            }
+        }
+    });
+
+    //Highlight clicked button
+    const highlighter = (className, needsRemoval) => {
+        className.forEach((button) => {
+            button.addEventListener("click", () => {
+                //needsRemoval = true means only one button should be highlight and other would be normal
+                if (needsRemoval) {
+                    let alreadyActive = false;
+
+                    //If currently clicked button is already active
+                    if (button.classList.contains("active")) {
+                        alreadyActive = true;
+                    }
+
+                    //Remove highlight from other buttons
+                    highlighterRemover(className);
+                    if (!alreadyActive) {
+                        //highlight clicked button
+                        button.classList.add("active");
+                    }
+                } else {
+                    //if other buttons can be highlighted
+                    button.classList.toggle("active");
+                }
+            });
+        });
+    };
+
+    const highlighterRemover = (className) => {
+        className.forEach((button) => {
+            button.classList.remove("active");
+        });
+    };
+
+    <?php if($update === true){ ?>
+            updateButton.addEventListener("click", () => {
+                let contentToSave = "";
+                if(append === false){
+                    contentToSave = `
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>${document.getElementById('fileName').value}</title>
+                    </head>
+                    <body>
+                        ${document.getElementById('text-input').innerHTML}
+                    </body>
+                    </html>`;
+                }
+                else  
+                    contentToSave = document.getElementById('text-input').innerHTML;
+
+                const fileName = document.getElementById('fileName').value + ".html";
+                const topic = document.getElementById('fileName').value
+                const teacherName = '<?= $teacher_name?>';
+                const subjectName = '<?= $subject_name?>';
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'save.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        alert(xhr.responseText); // Show a message indicating success or failure
+                        location.replace("../../Panel/notes.php");
+                    }
+                };
+                xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic)}&fileName=${encodeURIComponent(fileName)}&subject=${encodeURIComponent(subjectName)}&teacherName=${encodeURIComponent(teacherName)}&condition=${encodeURIComponent('update')}&id=${encodeURIComponent('<?= $_GET['id']?>')}`);
+            });
+        <?php }else { ?>
+    saveButton.addEventListener("click", () => {
+        let contentToSave = "";
+        if(append === false){
+            contentToSave = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>${document.getElementById('fileName').value}</title>
+            </head>
+            <body>
+                ${document.getElementById('text-input').innerHTML}
+            </body>
+            </html>`;
+        }
+        else  
+            contentToSave = document.getElementById('text-input').innerHTML;
+
+            const fileName = document.getElementById('fileName').value + ".html";
+            const topic = document.getElementById('fileName').value
+            const teacherName = '<?= $teacher_name?>';
+            const subjectName = '<?= $subject_name?>';
+
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'save.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText); // Show a message indicating success or failure
+                location.replace("../../Panel/notes.php");
+            }
+        };
+        xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic)}&fileName=${encodeURIComponent(fileName)}&subject=${encodeURIComponent(subjectName)}&teacherName=${encodeURIComponent(teacherName)}&condition=${encodeURIComponent('save')}`);
+    });
+<?php } ?>
+
+    function loadFile() {
+        const textInput = document.getElementById('text-input');
+        textInput.innerHTML = `<?=$html_content ?>`;
+    }
+
+    window.addEventListener('beforeunload', (e) => {
+        e.preventDefault();
+        e.returnValue = 'Are you sure you want to leave this page? Your data may be lost.';
+    });
+
+
+    window.onload = () => { 
+        <?php if($update === true){ ?>
+            loadFile();
+            console.log('hi');
+        <?php } ?>
+        initializer();
+    }
+</script>

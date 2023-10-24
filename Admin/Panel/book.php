@@ -46,10 +46,8 @@ include("../app/db_connection.php");
     <div class="content">
 
         <div class="search-box">
-            <form action="" method="get">
-            </form>
-            <form action="" method="get">
-                <input type="text" name="book" style="border: 2px solid rgb(255, 51, 255); width: 50%;"
+            <form action="" method="post">
+                <input type="text" name="data" style="border: 2px solid rgb(255, 51, 255); width: 50%;"
                     placeholder="Book name, Author name, Book Id">
                 <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                 title="Search Book">search</button>
@@ -96,9 +94,12 @@ include("../app/db_connection.php");
                         </form>
                     </tr>
                    <?php
-
-
-                         $sql="select * from books";
+                         $sql = "";
+                         if(isset($_POST['data'])){
+                             $data = $_POST['data'];
+                             $sql = "SELECT * FROM books WHERE book_name LIKE '%$data%' OR book_author_name LIKE '%$data%' OR book_subject_name LIKE '%$data%'";
+                         }
+                         else $sql = "Select * from books";
                          $query=mysqli_query($con,$sql);
                          if(mysqli_num_rows($query)>0)
                          {
@@ -131,55 +132,6 @@ include("../app/db_connection.php");
                             echo "No data found";
                          }
                  ?>
-                    <!-- <tr>
-                        <th scope="row">2</th>
-                        <td><a href="">Let Us C++</a></td>
-                        <td>Yashavant Kanetkar</td>
-                        <td>C++ Programming</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Book"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Book"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Book"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><a href="">Let Us C++</a></td>
-                        <td>Yashavant Kanetkar</td>
-                        <td>C++ Programming</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Book"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Book"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Book"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><a href="">Let Us C++</a></td>
-                        <td>Yashavant Kanetkar</td>
-                        <td>C++ Programming</td>
-                        <td>
-                            <a href="" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
-                            title="Delete Book"><i class="fa fa-trash"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
-                                title="View Book"><i class="fa fa-eye"></i></a>
-                            &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
-                            title="Update Book"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr> -->
-
 
                 </tbody>
               

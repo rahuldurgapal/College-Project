@@ -1,155 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet" href="./css/book.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
     <section class="header">
         <nav>
-            <a href="/Students/index.html"><img src="../icons/new-explorer.png" alt="#"></a>
+            <a href="index.html"><img src="../icons/new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
-                    <li><a href="/Students/index.html" class="active">Home</a></li>
-                    <li><a href="/Students/about.html">About</a></li>
-                    <li><a href="/Students/courses.html">Courses</a></li>
-                    <li><a href="/Students/notification.html">Notifications</a></li>
-                    <li><a href="/Students/contact.html">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
 
             </div>
-            <i class="fa-solid fa fa-bars" onclick="showmenu()"></i>
+            <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
-        <h6>RSMT ALL NOTES</h6>
-        <div class="container">
-            <div class="notes-container">
-                
-                <div>
-                    <article class="notes">
-                        <div>
-                            <a href="#">
-                                <h4>Java Language</h4>
-                            </a>
-                        </div>
-                        <div>
-                            <p> Date: <time id="publishDate"></time></p>
-                        </div>
-                        <div class="content">
-<!--                         
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod ratione eveniet sapiente porro, rerum impedit nulla distinctio. Excepturi, odit dolores ducimus amet autem quas recusandae. Eius quos nisi illum odit.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquam possimus voluptas sint perferendis consectetur! Dolores eius commodi magnam quaerat repellendus! Voluptates neque assumenda impedit et, at dolores mollitia sapiente!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, asperiores. Repellat, aliquam! Enim odit voluptatibus excepturi ratione ab quaerat quam deleniti quidem nemo? Explicabo id veritatis dolorum sunt illo mollitia.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quidem iste consequuntur dolore omnis debitis accusamus magnam reprehenderit voluptate numquam vitae, dolorum natus suscipit possimus aspernatur dicta laborum quod exercitationem!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, hic eaque asperiores esse quo fugit distinctio iusto aliquam, sed voluptates sit, voluptas aliquid recusandae beatae? Tempora praesentium et id hic.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia repellendus illum pariatur temporibus sunt omnis aliquam in ex, magnam natus voluptatum reiciendis incidunt praesentium adipisci est et ipsam eius provident. -->
-                      
-                    <a class="dots" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                      </svg></a>
-                    </div>
-                        <div >
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
-                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-                                  </svg>
-                               <samp class=""> Post a comment</samp>
-                            </a>
-                            <a href="#" class="readmore">READ MORE</a>
-                        </div>
-                        
-                    </article>
-                </div>
-           </div>
-
-        </div>
-        <div class="container">
-            <div class="notes-container">
-                
-                <div>
-                    <article class="notes">
-                        <div>
-                            <a href="#">
-                                <h4>Java Language</h4>
-                            </a>
-                        </div>
-                        <div>
-                            <p> Date: <time id="publishDate"></time></p>
-                        </div>
-                        <div class="content">
-                        
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod ratione eveniet sapiente porro, rerum impedit nulla distinctio. Excepturi, odit dolores ducimus amet autem quas recusandae. Eius quos nisi illum odit.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquam possimus voluptas sint perferendis consectetur! Dolores eius commodi magnam quaerat repellendus! Voluptates neque assumenda impedit et, at dolores mollitia sapiente!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, asperiores. Repellat, aliquam! Enim odit voluptatibus excepturi ratione ab quaerat quam deleniti quidem nemo? Explicabo id veritatis dolorum sunt illo mollitia.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quidem iste consequuntur dolore omnis debitis accusamus magnam reprehenderit voluptate numquam vitae, dolorum natus suscipit possimus aspernatur dicta laborum quod exercitationem!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, hic eaque asperiores esse quo fugit distinctio iusto aliquam, sed voluptates sit, voluptas aliquid recusandae beatae? Tempora praesentium et id hic.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia repellendus illum pariatur temporibus sunt omnis aliquam in ex, magnam natus voluptatum reiciendis incidunt praesentium adipisci est et ipsam eius provident.
-                      
-                    <a class="dots" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                      </svg></a>
-                    </div>
-                        <div >
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
-                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-                                  </svg>
-                               <samp class=""> Post a comment</samp>
-                            </a>
-                            <a href="#" class="readmore">READ MORE</a>
-                        </div>
-                        
-                    </article>
-                </div>
-           </div>
-
-        </div>
-        <div class="container">
-            <div class="notes-container">
-                
-                <div>
-                    <article class="notes">
-                        <div>
-                            <a href="#">
-                                <h4>Java Language</h4>
-                            </a>
-                        </div>
-                        <div>
-                            <p> Date: <time id="publishDate"></time></p>
-                        </div>
-                        <div class="content">
-                        
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod ratione eveniet sapiente porro, rerum impedit nulla distinctio. Excepturi, odit dolores ducimus amet autem quas recusandae. Eius quos nisi illum odit.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquam possimus voluptas sint perferendis consectetur! Dolores eius commodi magnam quaerat repellendus! Voluptates neque assumenda impedit et, at dolores mollitia sapiente!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, asperiores. Repellat, aliquam! Enim odit voluptatibus excepturi ratione ab quaerat quam deleniti quidem nemo? Explicabo id veritatis dolorum sunt illo mollitia.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quidem iste consequuntur dolore omnis debitis accusamus magnam reprehenderit voluptate numquam vitae, dolorum natus suscipit possimus aspernatur dicta laborum quod exercitationem!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, hic eaque asperiores esse quo fugit distinctio iusto aliquam, sed voluptates sit, voluptas aliquid recusandae beatae? Tempora praesentium et id hic.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia repellendus illum pariatur temporibus sunt omnis aliquam in ex, magnam natus voluptatum reiciendis incidunt praesentium adipisci est et ipsam eius provident.
-                      
-                    <a class="dots" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                      </svg></a>
-                    </div>
-                        <div >
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
-                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-                                  </svg>
-                               <samp class=""> Post a comment</samp>
-                            </a>
-                            <a href="#" class="readmore">READ MORE</a>
-                        </div>
-                        <div></div>
-                    </article>
-                </div>
-           </div>
-            </div>
-            <a href="#"><h3>MORE NOTES</h3></a>
+        
         <script src="js/notes.js"></script>
 </body>
+
 </html>
+
+<script>
+    var navlinks = document.getElementById("navlinks");
+    function showmenu() {
+        navlinks.style.right = "0";
+    }
+    function hidemenu() {
+        navlinks.style.right = "-200px";
+    }
+
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function () {
+        loader.style.display = "none";
+    })
+</script>

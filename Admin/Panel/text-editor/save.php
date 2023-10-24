@@ -8,11 +8,10 @@ if (isset($_POST['content'])) {
     $file = $_POST['file'];
 
 
-    $filePath = '../../Panel/Books/' . $fileName; // Specify the directory where you want to save the file
+    $filePath = '../../Panel/Notes/' . $fileName; // Specify the directory where you want to save the file
     
     
     if (file_put_contents($filePath, $content)) {
-        echo $subject;
     } else {
         echo 'Error saving file.';
     }
@@ -20,8 +19,8 @@ if (isset($_POST['content'])) {
     $sql = "insert into notes(notes_subject, notes_author, notes_topic, notes_link) values ('$subject', '$teacher', '$file', '$fileName')";
     $q=mysqli_query($con,$sql);
     if($q)
-     echo "notes save successfully";
+     echo "Notes save successfully";
     else
-     echo "error notes saving file";
+     echo "Some error occured during insertion";
 }
 ?>

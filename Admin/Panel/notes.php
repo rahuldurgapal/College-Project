@@ -34,10 +34,9 @@
     <div class="content">
 
         <div class="search-box">
-            <form action="" method="get">
-            </form>
-            <form action="" method="get">
-                <input type="text" name="book" placeholder="Topic name, Author name" style="width: 50%; border: solid 1px rgb(255, 0, 255);">
+
+            <form action="" method="post">
+                <input type="text" name="data" placeholder="Topic name, Author name" style="width: 50%; border: solid 1px rgb(255, 0, 255);">
                 <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
                 title="search">search</button>
             </form>
@@ -83,7 +82,12 @@
                     </tr>
                  <?php           
                  
-                        $sql = "select * from notes";
+                        $sql = "";
+                        if(isset($_POST['data'])){
+                            $data = $_POST['data'];
+                            $sql = "SELECT * FROM notes WHERE notes_topic LIKE '%$data%' OR notes_author LIKE '%$data%' OR notes_subject LIKE '%$data%'";
+                        }
+                        else $sql = "Select * from notes";
                         $q = mysqli_query($con,$sql);
                         if(mysqli_num_rows($q)>0)
                         {

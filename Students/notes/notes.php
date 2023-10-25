@@ -57,7 +57,7 @@
                 <div class="box">
                     <p><span>Subject Name :</span> <?=$row['notes_author']?></p>
                     <p><span>Author Name :</span> <?=$row['notes_subject']?></p>
-                    <button class="btn btn-primary">View</button>
+                    <a href="../../Admin/Panel/view_notes.php?id=<?=$row['notes_id']?>" target="_blank" class="btn btn-primary">View</a>
                 </div>
             </div>
 

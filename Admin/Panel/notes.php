@@ -103,7 +103,7 @@
                             <a href="../app/http/Notes/delete_note.php?id=<?php echo $row['notes_id']; ?>" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"
                             title="Delete Notes" onclick="return confirm('Are you sure you want to delete?')"> <i class="fa fa-trash"></i></a>
                             &nbsp
-                            <a href="view_notes.php?id=<?php  echo $row['notes_id']; ?>" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
+                            <a href="view_notes.php?id=<?= $row['notes_id']; ?>" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
                             target="_blank" title="View Page"><i class="fa fa-eye"></i></a>
                             &nbsp
                             <a href="./text-editor/?id=<?=$row['notes_id']?>" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"

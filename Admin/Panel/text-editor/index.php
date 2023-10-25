@@ -30,7 +30,7 @@ $update = false;
     }else{
         $topic_name = $_POST['topic_name'];
         $teacher_name = $_POST['teacher_name'];
-        $subject = $_POST['subject_name'];
+        $subject_name = $_POST['subject_name'];
     }
 ?>
 
@@ -309,18 +309,7 @@ $update = false;
             updateButton.addEventListener("click", () => {
                 let contentToSave = "";
                 if(append === false){
-                    contentToSave = `
-                    <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>${document.getElementById('fileName').value}</title>
-                    </head>
-                    <body>
-                        ${document.getElementById('text-input').innerHTML}
-                    </body>
-                    </html>`;
+                    contentToSave = `${document.getElementById('text-input').innerHTML}`;
                 }
                 else  
                     contentToSave = document.getElementById('text-input').innerHTML;
@@ -345,18 +334,9 @@ $update = false;
     saveButton.addEventListener("click", () => {
         let contentToSave = "";
         if(append === false){
-            contentToSave = `
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>${document.getElementById('fileName').value}</title>
-            </head>
-            <body>
-                ${document.getElementById('text-input').innerHTML}
-            </body>
-            </html>`;
+            contentToSave = `<div class="notes_block">
+    ${document.getElementById('text-input').innerHTML}
+</div>`;
         }
         else  
             contentToSave = document.getElementById('text-input').innerHTML;

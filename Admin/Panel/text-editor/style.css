@@ -74,6 +74,7 @@ button {
     padding: 7px;
     border-radius: 5px;
     width: fit-content;
+    display: none;
 }
 
 .save input{

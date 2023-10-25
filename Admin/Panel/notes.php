@@ -93,7 +93,6 @@
                         {
                           while($row=mysqli_fetch_assoc($q))
                           {
-                 
                           ?>
                     <tr>
                         <th scope="row"><?php echo $row['notes_id'];?></th>
@@ -107,17 +106,15 @@
                             <a href="view_notes.php?id=<?php  echo $row['notes_id']; ?>" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom"
                             target="_blank" title="View Page"><i class="fa fa-eye"></i></a>
                             &nbsp
-                            <a href="" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
+                            <a href="./text-editor/?id=<?=$row['notes_id']?>" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom"
                             title="Update Page"><i class="fa fa-edit"></i></a>
                         </td>
                  </tr>
                  <?php  
                 }
               }  else 
-                         echo "No data found";
-
-                         ?>
-              
+                echo "No data found";
+                ?>
                 </tbody>
             </table>
         </div>

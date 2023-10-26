@@ -19,23 +19,30 @@
 <body>
     <div id="preloader"></div>
     <section class="sub-header">
+        <?php  
+        
+        session_start();
+        if(isset($_SESSION['std_name']))
+        include('header.php');   else{ ?>
+
         <nav>
-            <a href="index.html"><img src="icons\new-explorer.png" alt="#"></a>
+            <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php" class="active">About</a></li>
+                    <li><a href="courses.php">Courses</a></li>
+                    <!-- <li><a href="notification.php">Notifications</a></li> -->
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
 
             </div>
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
+        <?php } ?>
     <div class="text-box">
-        <h1>For MBA Students
+        <h1>About Us
         </h1>
     </div>
 </section>
@@ -43,35 +50,15 @@
 <section class="about-us">
     <div class="row">
         <div class="about-col">
-            <h1>Check your Syllabus</h1>
-            <p>First Year Syllabus from ACTU Official Site --</p>
-            <iframe id="pdffiles" src="Pdf files/Syllabus.pdf" frameborder="0"></iframe>
-            <a href="Pdf files/Syllabus.pdf" download class="hero-btn red-btn">Download</a>
-            <p>Second Year Syllabus from ACTU Official Site --</p>
-            <iframe id="pdffiles" src="Pdf files/Syllabus2.pdf" frameborder="0"></iframe>
-            <a href="Pdf files/Syllabus2.pdf" download class="hero-btn red-btn">Download</a>
+            <h1>We are the Providing Best Resources</h1>
+            <p>At Explorer, we are committed to revolutionizing your learning experience. As an unofficial platform
+                dedicated to RSMT students, we provide a comprehensive array of notes,  previous year papers, and
+                insightful materials for MCA, BBA, BCA, and MBA courses.</p>
+            <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
         </div>
         <div class="about-col">
             <img src="image/about.jpg" alt="">
         </div>
-</section>
-<section>
-    <div id="paper">
-     <div class="style">
-        <h2>Previous Year Paper for second semester students</h2>
-    </div> 
-         <h3>Subject -- Automata Theory</h3>
-         <p>Paper1</p>
-         <a href="Pdf files/Automata.pdf" download class="hero-btn red-btn">Download</a>
-         <p>Paper2</p>
-         <a href="Pdf files/Automata (2).pdf" download class="hero-btn red-btn">Download</a>
-         <p>Paper3</p>
-         <a href="Pdf files/Automata (3).pdf" download class="hero-btn red-btn">Download</a>
-         <p>Paper4</p>
-         <a href="Pdf files/Automata (4).pdf" download class="hero-btn red-btn">Download</a>
-         <p>Paper5</p>
-         <a href="Pdf files/Automata (5).pdf" download class="hero-btn red-btn">Download</a>
-    </div>
 </section>
     <!-- Footer -->
     <section class="footer">

@@ -19,25 +19,34 @@
 <body>
     <div id="preloader"></div>
     <section class="sub-header">
+
+    <?php  
+        
+        session_start();
+        if(isset($_SESSION['std_name']))
+        include('header.php');   else{ ?>
         <nav>
-            <a href="index.html"><img src="icons\new-explorer.png" alt="#"></a>
+            <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="courses.php">Courses</a></li>
+                    <!-- <li><a href="notification.php">Notifications</a></li> -->
+                    <li><a href="contact.php" class="active">Contact</a></li>
                 </ul>
 
             </div>
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
-        <div class="text-box">
-            <h1>Contact Us</h1>
-        </div>
-    </section>
+
+        <?php } ?>
+    <div class="text-box">
+        <h1>Contact us
+        </h1>
+    </div>
+</section>
 
     <!-- Contact Us -->
     <section class="location">

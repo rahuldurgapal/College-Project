@@ -31,7 +31,7 @@ if(isset($_POST['user_login']))
            $user=mysqli_fetch_assoc($result);
            $_SESSION['std_name']=$user['student_name'];
            $_SESSION['std_email'] = $user['student_email'];
-           header("location: ../../../Students/home.php");
+           header("location: ../../../Students/index.php");
        }
      
        else{

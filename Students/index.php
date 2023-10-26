@@ -19,21 +19,31 @@
 <body>
     <div id="preloader"></div>
     <section class="header">
+        <?php  
+        
+        session_start();
+        if(isset($_SESSION['std_name']))
+        include('header.php');   else{ ?>
+
+
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
                     <li><a href="index.php" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="courses.php">Courses</a></li>
+                    <!-- <li><a href="notification.html">Notifications</a></li> -->
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
 
             </div>
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
+
+        <?php } ?>
+      
         <div class="text-box">
             <h1>Unlocking knowledge,Empowering Futures
             </h1>
@@ -41,7 +51,7 @@
                 Papers, and Insights for MCA, BBA, BCA, and MBA Courses."
             </p>
         <?php 
-          session_start();
+          
           if(isset($_SESSION['std_name'])){
            echo "<h2>Welcome</h2>";
            echo '<h1>'. $_SESSION['std_name'] .'</h1>';
@@ -61,7 +71,7 @@
         </p>
         <div class="row">
             <div class="course-col">
-                <a href="MCAcontent.html">
+                <a href="MCAcontent.php">
                 <h3>MCA</h3>
                 <p>Provide a detailed overview of the MCA program, including its duration, eligibility criteria,
                     admission process, and the subjects covered throughout the course. </p>
@@ -85,7 +95,7 @@
                 </a>
             </div>  -->
             <div class="course-col"> 
-                <a href="BCAcontent.html">
+                <a href="BCAcontent.php">
                 <h3>BCA</h3>
                 <p>"Unveiling the Digital Realm: Empowering Futures with Explorer's BCA Insights - Explore, Code,
                     Achieve.
@@ -101,7 +111,7 @@
             shine in every career opportunity."</p>
         <div class="row">
             <div class="campus-col">
-                <a href="programming.html">
+                <a href="programming.php">
                 <img src="image/langauge.jpg" alt="">
                 <div class="layer">
                     <h3>Programming langauge</h3>
@@ -109,7 +119,7 @@
                 </a>
             </div>
             <div class="campus-col">
-                <a href="DSA.html">
+                <a href="DSA.php">
                 <img src="image/DSA.jpg" alt="">
                 <div class="layer">
                     <h3>DSA <br> Data Structure</h3>
@@ -117,7 +127,7 @@
                 </a>
             </div>
             <div class="campus-col">
-                <a href="interview.html">
+                <a href="interview.php">
                 <img src="image/interview.jpg" alt="">
                 <div class="layer">
                     <h3>Job <br> Interview</h3>

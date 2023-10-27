@@ -19,9 +19,8 @@
 <!-- <body>
     <div id="preloader"></div>
     <section class="sub-header" id="profile" > -->
-
-    <?php session_start(); 
-    if(isset($_SESSION['std_name'])){  ?>
+        <!-- It is a Bootstrap CSS Link -->
+   
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
@@ -30,19 +29,24 @@
                     <li><a href="index.php" >Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php">Courses</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="MyAccount.php">profile-view</a></li>
+                    <li><a href="books/book.php">Books</a></li>
+                    <li><a href="notes/notes.php">Notes</a></li>
+                    <li><a class ="btn " href="MyAccount.php">Arjun Tripathi</a></li>
                 </ul>
 
             </div>
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
 
-        <?php }
-         else
-          header("location: index.php");
-        
-        ?>
+<style>
+    .btn{
+        padding: 10px;
+        background-color: rgb(163, 71, 5);
+        color: white;
+        border-radius: 20px;
+    }
+</style>
+      
     <!-- </section>  
     <section>
         <div class="space"></div>

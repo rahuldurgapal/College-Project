@@ -15,6 +15,14 @@
             <form action="../../Admin/app/http/user_signup.php" method="post">
                 <img src="/Students/signup/img/user.png" alt="" class="avatar">
                  <h2>Sign up</h2>
+                 <?php
+                if(isset($_GET['warn'])){
+                ?>
+                    <div class="message">
+                        <p><?= $_GET['warn']?></p>
+                    </div>
+                <?php }?>
+                <br>
                  <div class="div-input ones">
                     <div class="i">
                         <i class="fa fa-user-circle"></i>
@@ -47,13 +55,9 @@
                     
                     <div>
                         <input type="submit" name="signup" class="btn" value="Sign up">
+                        <br>
+                        <a href="../login" > Already have an account </a>
                     </div>
-                        <div>
-                    <a href="#" class="google-btn google"><i class="google-i fa fa-google fa-fw">
-                    </i>Login with google+
-                    </a>
-                    
-                </div>
                 
             </form>
         </div>
@@ -62,3 +66,14 @@
     <script src="./js/signup.js"></script>
 </body>
 </html>
+
+<style>
+    .message{
+        border-radius:10px;
+        background-color: rgb(255, 92, 92);
+        color: white;
+        font-weight: bolder;
+        padding: 10px;
+        border: 1px solid;
+    }
+</style>

@@ -10,7 +10,7 @@
  $host = "localhost:3306";
  $username = "root";
  $password = "";
- $database = "explorer_404";
+ $database = "test";
 
 //  $host = "localhost";
 //  $username = "root";

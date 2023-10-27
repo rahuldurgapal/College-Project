@@ -28,39 +28,39 @@
 
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
-            <div class="nav-links" id="navlinks">
+            <!-- <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
                     <li><a href="index.php" class="active">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php">Courses</a></li>
-                    <!-- <li><a href="notification.html">Notifications</a></li> -->
+                
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
 
             </div>
-            <i class="fa-solid fa-bars" onclick="showmenu()"></i>
+            <i class="fa-solid fa-bars" onclick="showmenu()"></i> -->
         </nav>
 
         <?php } ?>
       
         <div class="text-box">
-            <h1>Unlocking knowledge,Empowering Futures
-            </h1>
-            <p> "Empowering RSMT Students Through Knowledge: <span>Your Ultimate Academic Explorer </span> <br> Discover Notes,
-                Papers, and Insights for MCA, BBA, BCA, and MBA Courses."
-            </p>
+            
         <?php 
           
           if(isset($_SESSION['std_name'])){
            echo "<h2>Welcome</h2>";
            echo '<h1>'. $_SESSION['std_name'] .'</h1>';
-           echo "<a href='login/logout.php' class='hero-btn'> Log out</a>";
           }
           
           else
-           echo "<a href='login/' class='hero-btn'> Sign in </a>";
+           echo "<a href='login/' class='hero-btn'> Sign in >> </a>";
            ?>
+           <h1>Unlocking knowledge,Empowering Futures
+            </h1>
+            <p> "Empowering RSMT Students Through Knowledge: <span>Your Ultimate Academic Explorer </span> <br> Discover Notes,
+                Papers, and Insights for MCA, BBA, BCA, and MBA Courses."
+            </p>
           
         </div>
     </section>

@@ -27,8 +27,6 @@ if(isset($_SESSION['email_otp']))
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +46,14 @@ if(isset($_SESSION['email_otp']))
                <form action="<?php echo $_SERVER['PHP_SELF'];  ?>" method="post" style="margin-top: 25%;">   
                    <img class="avatar" src="../login/img/otppng.png" >
                    <h4>Please enter the one time Password to verify your account</h4>
+                   <?php
+                if(isset($_GET['warn'])){
+                ?>
+                <div class="message">
+                    <p><?= $_GET['warn']?></p>
+                </div>
+                <?php }?>
+                <br>
                    <div class="div-input one ">
                        <div class="i">
                            <i class="fa fa-lock"></i>
@@ -74,3 +80,14 @@ if(isset($_SESSION['email_otp']))
 else
  header("Location: index.php");
 ?>
+
+<style>
+    .message{
+        border-radius:10px;
+        background-color: rgb(255, 92, 92);
+        color: white;
+        font-wight: bolder;
+        padding: 10px;
+        border: 1px solid;
+    }
+</style>

@@ -148,7 +148,10 @@
                 <a href="#" > <i class="fas fa-user detail-icon"></i>My account</a>
             </div>
             <div class="links">
-                <a href="#"> <i class="fas fa-edit detail-icon"></i>Setting</a>
+                <a href="#"> <i class="fas fa-edit detail-icon"></i>Edit</a>
+            </div>
+            <div class="links">
+                <a href="./login/logout.php"> <i class="fas fa-power-off detail-icon"></i>Logout</a>
             </div>
         </div>
         <div class="column">

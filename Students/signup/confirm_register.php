@@ -15,25 +15,10 @@ if(isset($_SESSION['done'])){
     $query = mysqli_query($con,$sql);
     if($query){
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <center>
-         <br><br>
-         <h1>Your Registration is successfull</h1>
-         <a href="../login/">Back to Login</a>
-    </center>
-</body>
-</html>
-<?php
-session_unset();
-session_destroy();
+   header("location: ../login/index.php?success=Your data are sucessfully registered");
+
+    session_unset();
+    session_destroy();
     }
     else 
      echo "something wrong in the query";

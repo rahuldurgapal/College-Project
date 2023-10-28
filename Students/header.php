@@ -20,6 +20,12 @@
     <div id="preloader"></div>
     <section class="sub-header" id="profile" > -->
         <!-- It is a Bootstrap CSS Link -->
+
+        <?php 
+        
+          include("../Admin/app/db_connection.php");
+        
+        ?>
    
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>

@@ -7,7 +7,7 @@ session_start();
 if(isset($_SESSION['email_otp']))
 {
     $x = $_SESSION['email_otp'];
-    echo "<script> console.log($x)  </script>";
+    echo "<script> alert($x)  </script>";
     if(isset($_POST['otp']))
     {
          $value = $_POST['o_t_p'];

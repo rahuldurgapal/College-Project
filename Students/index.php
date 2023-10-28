@@ -56,8 +56,8 @@
           else
            echo "<a href='login/' class='hero-btn'> Sign in >> </a>";
            ?>
-           <h1>Unlocking knowledge,Empowering Futures
-            </h1>
+           <h2>Unlocking knowledge,Empowering Futures
+            </h2>
             <p> "Empowering RSMT Students Through Knowledge: <span>Your Ultimate Academic Explorer </span> <br> Discover Notes,
                 Papers, and Insights for MCA, BBA, BCA, and MBA Courses."
             </p>

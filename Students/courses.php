@@ -28,17 +28,16 @@
 
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
-            <div class="nav-links" id="navlinks">
+            <!-- <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php" class="active">Courses</a></li>
-                    <!-- <li><a href="notification.php">Notifications</a></li> -->
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
 
-            </div>
+            </div> -->
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
 
@@ -55,31 +54,31 @@
         </p>
         <div class="row">
             <div class="course-col">
-                <a href="MCAcontent.html">
+                <a href="MCAcontent.php">
                 <h3>MCA</h3>
                 <p>Provide a detailed overview of the MCA program, including its duration, eligibility criteria,
                     admission process, and the subjects covered throughout the course. </p>
                 </a>
             </div>
 
-            <div class="course-col">
+            <!-- <div class="course-col">
                 <a href="MBAcontent.html">
                 <h3>MBA</h3>
                 <p>Provide a comprehensive overview of the MBA program, including its duration, eligibility criteria,
                     admission process, and the core areas of study.</p>
                 </a>
-                </div>
+                </div> -->
 
-            <div class="course-col">
+            <!-- <div class="course-col">
                 <a href="BBAcontent.html">
                 <h3>BBA</h3>
                 <p>"Navigating Success in Business: Your Pathway to Excellence with Explorer's BBA Resources on
                     Explorer.Providing all inforations like, its duration, eligibility criteria.
                 </p>
                 </a>
-            </div>
+            </div> -->
             <div class="course-col">
-                <a href="BCAcontent.html">
+                <a href="BCAcontent.php">
                 <h3>BCA</h3>
                 <p>"Unveiling the Digital Realm: Empowering Futures with Explorer's BCA Insights - Explore, Code,
                     Achieve.

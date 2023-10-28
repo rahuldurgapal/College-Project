@@ -27,17 +27,16 @@
         include('header.php');   else{ ?>
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
-            <div class="nav-links" id="navlinks">
+            <!-- <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php">Courses</a></li>
-                    <!-- <li><a href="notification.php">Notifications</a></li> -->
                     <li><a href="contact.php" class="active">Contact</a></li>
                 </ul>
 
-            </div>
+            </div> -->
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
         </nav>
 

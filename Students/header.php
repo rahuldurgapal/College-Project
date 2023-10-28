@@ -23,7 +23,6 @@
 
         <?php 
         
-          include("../Admin/app/db_connection.php");
         
         ?>
    
@@ -35,9 +34,9 @@
                     <li><a href="index.php" >Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php">Courses</a></li>
-                    <li><a href="books/book.php">Books</a></li>
-                    <li><a href="notes/notes.php">Notes</a></li>
-                    <li><a class ="btn " href="MyAccount.php">Arjun Tripathi</a></li>
+                    <li><a href="books/index.php">Books</a></li>
+                    <li><a href="notes/index.php">Notes</a></li>
+                    <li><a class ="btn " href="MyAccount.php"><?php  echo $_SESSION['std_name']; ?></a></li>
                 </ul>
 
             </div>
@@ -53,6 +52,7 @@
     }
 </style>
       
+
     <!-- </section>  
     <section>
         <div class="space"></div>

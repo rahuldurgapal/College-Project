@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION['std_name'])){
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +20,8 @@
 
 <body>
     <section class="header">
-        <nav>
+
+        <!-- <nav>
             <a href="index.html"><img src="../icons/new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
@@ -28,7 +35,7 @@
 
             </div>
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
-        </nav>
+        </nav> -->
         <form action="" method="post" class="searchabox">
                 <input type="text" name="data" placeholder="Search Your Notes">
                 <button type="submit">search</button>
@@ -82,3 +89,8 @@
         loader.style.display = "none";
     })
 </script>
+
+<?php  }  
+else
+ header("../index.php");
+?>

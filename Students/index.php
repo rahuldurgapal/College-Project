@@ -24,7 +24,7 @@
         session_start();
         if(isset($_SESSION['std_name']))
         include('header.php');   else{ ?>
-
+           
 
         <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
@@ -42,7 +42,7 @@
             <i class="fa-solid fa-bars" onclick="showmenu()"></i> -->
         </nav>
 
-        <?php } ?>
+         <?php } ?>
       
         <div class="text-box">
             

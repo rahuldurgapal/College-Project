@@ -1,3 +1,9 @@
+<?php
+
+   session_start();
+        if(isset($_SESSION['std_name'])){
+
+            ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +22,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <style>
         /* Style for the layout */
         .container {
@@ -75,6 +82,17 @@
             line-height: 1.6;
             padding: 20px;
         }
+        #pfimage{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #512DA8;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  line-height: 150px;
+  margin: 20px 0;
+}
         .user-details strong {
             color: #5c5c5c;
         }
@@ -118,12 +136,17 @@
     <div id="preloader"></div>
     <section class="sub-header">
         <?php  
-        
-        session_start();
-        if(isset($_SESSION['std_name']))
-        include('header.php');   else{ ?>
 
-        <nav>
+     
+        $name = $_SESSION['std_name'];
+        include('header.php');   
+        include("../Admin/app/db_connection.php");
+        $sql = "select * from students where student_name='$name'";
+        $q=mysqli_query($con,$sql);
+        $res=mysqli_fetch_assoc($q);
+         ?>
+
+        <!-- <nav>
             <a href="index.php"><img src="icons\new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
@@ -131,14 +154,14 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php">Courses</a></li>
-                    <!-- <li><a href="notification.php">Notifications</a></li> -->
+                    
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
 
-            </div>
-            <i class="fa-solid fa-bars" onclick="showmenu()"></i>
-        </nav>
-        <?php } ?>
+            </div> 
+            <i class="fa-solid fa-bars" onclick="showmenu()"></i> 
+        </nav> -->
+        
  
 </section>
     <h1 class="heading">Account :</h1>
@@ -157,12 +180,13 @@
         <div class="column">
             <div class="user-details">
                 <div class="details-section">
-                    <img class="profile-picture" src="image//profile-picture.jpg" alt="Profile Picture">
+                     <!-- <img class="profile-picture" src="image//profile-picture.jpg" alt="Profile Picture">-->
+                     <div id="pfimage"></div>
                     <h2>User Details</h2>
-                    <p><i class="fas fa-user detail-icon"></i> <strong>Name:</strong> John Doe</p>
-                    <p><i class="fas fa-envelope detail-icon"></i> <strong>Email:</strong> john@example.com</p>
-                    <p><i class="fas fa-phone detail-icon"></i> <strong>Phone:</strong> (123) 456-7890</p>
-                    <p><i class="fas fa-map-marker detail-icon"></i> <strong>Address:</strong> 123 Main St, City</p>
+                    <p id="fname"><i class="fas fa-user detail-icon"></i> <strong>Name:</strong> <?php echo $res['student_name'];  ?></p>
+                    <p><i class="fas fa-envelope detail-icon"></i> <strong>Email:</strong> <?php echo $res['student_email'];  ?></p>
+                    <p><i class="far fa-eye"></i> <strong>Password:</strong><?php echo $res['student_password']; ?> </p>
+                  
                 </div>
             </div>
         </div>
@@ -202,6 +226,18 @@
         window.addEventListener("load", function(){
             loader.style.display = "none";
         })
+
+    $(document).ready(function(){
+        var fname = $('#fname').text();
+        console.log(fname);
+        var initial = $('#fname').text().charAt(7);
+        var profile = $('#pfimage').text(initial);
+    });
     </script>
 </body>
 </html>
+<?php }
+
+else
+ header("location: index.php");
+?>

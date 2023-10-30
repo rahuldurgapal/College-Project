@@ -21,21 +21,22 @@
 <body>
     <section class="header">
 
-        <!-- <nav>
-            <a href="index.html"><img src="../icons/new-explorer.png" alt="#"></a>
+    <nav>
+            <a href="index.php"><img src="../icons/new-explorer.png" alt="#"></a>
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../index.php" >Home</a></li>
+                    <li><a href="../about.php">About</a></li>
+                    <li><a href="../courses.php">Courses</a></li>
+                    <li><a href="../books/index.php">Books</a></li>
+                    <li><a href="index.php">Notes</a></li>
+                    <li><a class ="btn " href="MyAccount.php"><?php  echo $_SESSION['std_name']; ?></a></li>
                 </ul>
 
             </div>
             <i class="fa-solid fa-bars" onclick="showmenu()"></i>
-        </nav> -->
+        </nav>
         <form action="" method="post" class="searchabox">
                 <input type="text" name="data" placeholder="Search Your Notes">
                 <button type="submit">search</button>

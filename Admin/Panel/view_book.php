@@ -39,7 +39,6 @@ if(isset($_GET['id']))
             <a href="index.php">Home</a>
             <a class="active" href="book.php">Books</a>
             <a href="notes.php">Notes</a>
-            <a href="course.php">Course</a>
         </div>
     </div>
     <div class="content">

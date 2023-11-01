@@ -28,7 +28,6 @@
             <a href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a class="active" href="notes.php">Notes</a>
-            <a href="syllabus.php">Syllabus</a>
         </div>
     </div>
     <div class="content">

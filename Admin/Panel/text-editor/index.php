@@ -60,7 +60,7 @@ $update = false;
 
             <div> 
                 <?php if($update === true){ ?>
-                    <button id="updateFile" class="saveFile"><i class="fa fa-save"> Update</i></button>
+                    <button id="updateFile" class="updateFile"><i class="fa fa-save"> Update</i></button>
                 <?php }else{ ?>
                     <button id="saveFile" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
                 <?php } ?>
@@ -222,6 +222,46 @@ $update = false;
         //default size
         fontSizeRef.value = 3;
     };
+
+    window.addEventListener('keydown', event => {
+        if ((event.ctrlKey || event.metaKey) && (event.key === 'b' || event.key === 'B')) {
+            event.preventDefault();
+            document.querySelector('#bold').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && (event.key === 'i' || event.key === 'I')) {
+            event.preventDefault();
+            document.querySelector('#italic').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && (event.key === 'u' || event.key === 'U')) {
+            event.preventDefault();
+            document.querySelector('#underline').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'l' || event.key === 'L')) {
+            event.preventDefault();
+            document.querySelector('#justifyLeft').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'e' || event.key === 'E')) {
+            event.preventDefault();
+            document.querySelector('#justifyCenter').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'r' || event.key === 'R')) {
+            event.preventDefault();
+            document.querySelector('#justifyRight').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'f' || event.key === 'F')) {
+            event.preventDefault();
+            document.querySelector('#justifyFull').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.key === '+') {
+            event.preventDefault();
+            document.querySelector('#superscript').click();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.key === '=') {
+            event.preventDefault();
+            document.querySelector('#subscript').click();
+        }
+    });
+
 
     //main logic
     const modifyText = (command, defaultUi, value) => {

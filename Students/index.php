@@ -181,20 +181,6 @@
                     <i class="fa-regular fa-star"></i>
                 </div>
             </div>
-            <div class="testomonials-col">
-                <img src="image/aman.jfif" alt="">
-                <div>
-                    <p>"Wholeheartedly endorse Explorer's dedication to enhancing learning through its diverse
-                        resources. An invaluable aid for academic success."
-                    </p>
-                    <h3>Prof. Aman Gupta </h3>
-
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
             </div>
         </div>
     </section>

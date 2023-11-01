@@ -88,6 +88,10 @@ div.content {
         margin-left: 0;
     }
 
+    .dropdown-menu{
+        position: relative;
+    }
+
 }
 
 @media screen and (max-width: 000px) {

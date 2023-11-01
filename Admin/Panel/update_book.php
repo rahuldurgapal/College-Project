@@ -35,7 +35,6 @@
             <a class="active" href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a href="notes.php">Notes</a>
-            <a href="course.php">Course</a>
         </div>
     </div>
     <div class="content">

@@ -5,19 +5,16 @@
 }
 
 body {
-    background-color: #f4ad95;
+    background-color: #e6bd9f;
 }
 
 .container {
     background-color: #ffffff;
-    width: 90vmin;
+    margin: 80px auto;
+    max-width: 80%;
     padding: 50px 30px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
     border-radius: 10px;
-    box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+    box-shadow: 0 25px 50px rgba(13, 39, 68, 0.2);
 }
 
 .options {
@@ -40,8 +37,21 @@ button {
     color: #020929;
 }
 
+button {
+    height: 28px;
+    width: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffffff;
+    outline: none;
+    color: #020929;
+}
+
 .save{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
     border: 1px solid black;
@@ -55,11 +65,20 @@ button {
 
 .save>div{
     display: flex;
+    gap: 5px;
+}
+
+.updateFile{
+    border: none;
+    background-color: rgb(11, 183, 8);
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    width: fit-content;
 }
 
 .saveFile{
     border: none;
-    margin-left: 5px;
     background-color: red;
     color: white;
     padding: 7px;
@@ -74,7 +93,6 @@ button {
     padding: 7px;
     border-radius: 5px;
     width: fit-content;
-    display: none;
 }
 
 .save input{
@@ -84,7 +102,7 @@ button {
     border-radius: 5px;
     padding: 3px;
     font-size: medium;
-    width: auto;
+    max-width: 200px;
     padding-left: 10px;
 }
 
@@ -132,9 +150,20 @@ input[type="color"]::-moz-color-swatch {
     overflow-y: auto;
     overflow-x: hidden;
     padding: 20px;
-    height: 50vh;
+    height: 60vh;
 }
 
 .active {
     background-color: #e0e9ff;
+}
+
+@media (max-width: 800px){
+    .container {
+        background-color: #ffffff;
+        margin: auto;
+        max-width: 1000%;
+        padding: 30px 10px;
+        border-radius: 10px;
+        box-shadow: 0 25px 50px rgba(13, 39, 68, 0.2);
+    }
 }

@@ -25,23 +25,24 @@ include("../../db_connection.php");
     $fileExtension = pathinfo($file_name, PATHINFO_EXTENSION);
     if(strtolower($fileExtension)==='pdf')
     {
-        if(move_uploaded_file($file_tmp,"../../../Panel/Books/$file_name"))
-         echo "file uploades successfully<br>";
-        else 
-         echo "file not uploaded<br>";
+        
 
         $sql = "insert into books(book_name, book_author_name, book_subject_name, book_pdf) values ('$new_book_name', '$new_book_author', '$new_subject_name', '$file_name')";
+        echo $sql;
         $q=mysqli_query($con,$sql);
-        if($q)
-        header("location: ../../../Panel/book.php");
+        if($q){
+            if(move_uploaded_file($file_tmp,"../../../Panel/Books/$file_name"))
+                echo "file uploades successfully<br>";
+            else 
+                echo "file not uploaded<br>";
+            header("location: ../../../Panel/book.php");
+        }
        else
         echo "operation failed";
     }
     else{
         echo "Please select pdf format";
-       
     }
-
     }
     else{
         echo "not selected";

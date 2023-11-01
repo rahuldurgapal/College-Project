@@ -34,7 +34,7 @@ if(isset($_GET['id']))
         <img src="../image/d.png" width="200px">
     </header>
     <button id="mode"><i class="fa fa-moon-o fa-2x" style="color: white"></i></button>
-    <?=include($html_url)?>
+    <?php include($html_url)?>
     <footer>
         <div>Subject Name : <span><?=$Subject?></span></div>
         <div>Author Name : <span><?=$Author?></span></div>
@@ -107,7 +107,7 @@ if(isset($_GET['id']))
         /*      white-space: pre-wrap;
     word-wrap: break-word; */
         background-color: #434343;
-        padding: 3px;
+        padding: 3px ;
         line-height: 1.8;
         overflow: auto;
         color: rgb(255, 255, 13);

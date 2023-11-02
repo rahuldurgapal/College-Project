@@ -42,7 +42,7 @@
                 <button type="submit">search</button>
             </form>
 
-        <div class="container d-flex justify-content-between flex-wrap">
+        <div class="container d-flex justify-content-around flex-wrap ">
       <?php  
       error_reporting(E_WARNING|E_NOTICE);
       ini_set('display_errors', 1);
@@ -63,8 +63,8 @@
                 <h3><?= $row['notes_topic']?></h3>
                 <hr>
                 <div class="box">
-                    <p><span>Subject Name :</span> <?=$row['notes_author']?></p>
-                    <p><span>Author Name :</span> <?=$row['notes_subject']?></p>
+                    <p><pan>Subject Name : </pan> <?=$row['notes_subject']?></p>
+                    <p><pan>Author Name : </pan> <?=$row['notes_author']?></p>
                     <a href="../../Admin/Panel/view_notes.php?id=<?=$row['notes_id']?>" target="_blank" class="btn btn-primary">View</a>
                 </div>
             </div>

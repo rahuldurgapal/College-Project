@@ -212,12 +212,7 @@
     </section>
    <div class="copyright">
     <p >Copyright @Saloni Made by <i class="fa-solid fa-heart"></i> My Self</p>
-</div> 
-
-
-
-
-
+</div>
     <!-- Javascript -->
     <script>
         var navlinks = document.getElementById("navlinks");

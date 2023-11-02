@@ -29,12 +29,12 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     color: black;
     text-transform: uppercase;
 }
 
-.box span{
+.box pan{
     font-weight: bolder;
     color: rgb(29, 29, 255);
 }

@@ -402,7 +402,8 @@ $update = false;
 
     function loadFile() {
         const textInput = document.getElementById('text-input');
-        textInput.innerHTML = `<?=$html_content ?>`;
+        textInput.innerHTML = <?= json_encode($html_content, JSON_HEX_TAG) ?>;
+
     }
 
     window.addEventListener('beforeunload', (e) => {

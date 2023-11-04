@@ -7,6 +7,7 @@ include("../../app/db_connection.php");
 $topic_name = "";
 $teacher_name = "";
 $subject_name = "";
+$html_content = "";
 $update = false;
     if(isset($_GET['id'])){
         $update = true;
@@ -26,11 +27,12 @@ $update = false;
         if ($html_content === false) {
             die('Failed to fetch the HTML content.');
         }
-        
+
     }else{
-        $topic_name = $_POST['topic_name'];
-        $teacher_name = $_POST['teacher_name'];
-        $subject_name = $_POST['subject_name'];
+        $update = false;
+        $topic_name = isset($_POST['topic_name']) ? $_POST['topic_name'] : "";
+        $teacher_name = isset($_POST['teacher_name']) ? $_POST['teacher_name'] : "";
+        $subject_name = isset($_POST['subject_name']) ? $_POST['subject_name'] : "";
     }
 ?>
 
@@ -114,6 +116,10 @@ $update = false;
                 <i class="fa fa-image"></i>
             </button>
 
+            <button id="embadeCode" class="option-button" data-toggle="tooltip" data-placement="top" title="Embade Code">
+                <i class="fa fa-code"></i>
+            </button>
+
             <!-- Alignment -->
             <button id="justifyLeft" class="option-button align" data-toggle="tooltip" data-placement="top" title="Alignment left">
                 <i class="fa-solid fa-align-left"></i>
@@ -174,6 +180,7 @@ $update = false;
     let writingArea = document.getElementById("text-input");
     let linkButton = document.getElementById("createLink");
     let imageButton = document.getElementById("createImage");
+    let embadedCode = document.getElementById("embadeCode");
     let alignButtons = document.querySelectorAll(".align");
     let spacingButtons = document.querySelectorAll(".spacing");
     let formatButtons = document.querySelectorAll(".format");
@@ -312,6 +319,14 @@ $update = false;
         }
     });
 
+    embadedCode.addEventListener('click', () => {
+        let videoCode = prompt('Enter the YouTube video embed code:');
+        if (videoCode !== null) {
+            // You can further validate the videoCode to ensure it's a valid YouTube embed code.
+            document.execCommand('insertHTML', false, videoCode);
+        }
+    });
+
     //Highlight clicked button
     const highlighter = (className, needsRemoval) => {
         className.forEach((button) => {
@@ -370,21 +385,20 @@ $update = false;
                 };
                 xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic)}&fileName=${encodeURIComponent(fileName)}&subject=${encodeURIComponent(subjectName)}&teacherName=${encodeURIComponent(teacherName)}&condition=${encodeURIComponent('update')}&id=${encodeURIComponent('<?= $_GET['id']?>')}`);
             });
-        <?php }else { ?>
+<?php }else { ?>
     saveButton.addEventListener("click", () => {
         let contentToSave = "";
+        console.log("hi");
         if(append === false){
-            contentToSave = `<div class="notes_block">
-    ${document.getElementById('text-input').innerHTML}
-</div>`;
+            contentToSave = `<div class="notes_block"> ${document.getElementById('text-input').innerHTML} </div>`;
         }
         else  
             contentToSave = document.getElementById('text-input').innerHTML;
 
             const fileName = document.getElementById('fileName').value + ".html";
             const topic = document.getElementById('fileName').value
-            const teacherName = '<?= $teacher_name?>';
-            const subjectName = '<?= $subject_name?>';
+            const teacherName = '<?php echo $teacher_name?>';
+            const subjectName = '<?php echo $subject_name?>';
 
 
         const xhr = new XMLHttpRequest();
@@ -403,7 +417,6 @@ $update = false;
     function loadFile() {
         const textInput = document.getElementById('text-input');
         textInput.innerHTML = <?= json_encode($html_content, JSON_HEX_TAG) ?>;
-
     }
 
     window.addEventListener('beforeunload', (e) => {
@@ -414,8 +427,8 @@ $update = false;
 
     window.onload = () => { 
         <?php if($update === true){ ?>
-            loadFile();
             console.log('hi');
+            loadFile();
         <?php } ?>
         initializer();
     }

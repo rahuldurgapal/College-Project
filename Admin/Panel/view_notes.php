@@ -115,8 +115,12 @@ if(isset($_GET['id']))
         border-radius: 5px;
     }
 
-    .notes_block img {
+    .notes_block img{
         max-width: 600px;
+    }
+    .notes_block iframe{
+        max-width: 500px;
+        max-height: 300px
     }
 
     a {
@@ -149,6 +153,9 @@ if(isset($_GET['id']))
             flex-flow: column;
             gap: 25px;
             margin: auto;
+        }
+        .notes_block iframe{
+            max-width: 100%;
         }
     }
 </style>

@@ -192,13 +192,13 @@
     <section class="cta">
         <h1>Please Login to access our exclusive range of resources and <br> unlock a world of knowledge tailored to
             your educational journey.</h1>
-        <a href="login/login.html" class="hero-btn"> Login Now</a>
+        <a href="login/" class="hero-btn"> Login Now</a>
     </section>
     <?php  } ?>
     <!-- Footer -->
     <?php include("footer.php");  ?>
 
-    
+
     <!-- Javascript -->
     <script>
         var navlinks = document.getElementById("navlinks");

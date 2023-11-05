@@ -70,8 +70,8 @@
                     <h6><?php  echo $res['book_author_name'];  ?></h6>
                     <hr>
 
-                    <button class="btn btn-primary"><i class="fa fa-download" data-toggle="tooltip"
-                            data-placement="bottom" title="Download Book"></i></button>
+                    <a href="<?php echo "../../Admin/Panel/Books/".$res['book_pdf'];?>" class="btn btn-primary" download><i class="fa fa-download" data-toggle="tooltip"
+                            data-placement="bottom" title="Download Book"></i></a>
                     &nbsp
                     <button class="btn btn-primary"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom"
                             title="View Book"></i></button>

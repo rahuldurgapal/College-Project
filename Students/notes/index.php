@@ -31,7 +31,7 @@
                     <li><a href="../courses.php">Courses</a></li>
                     <li><a href="../books/index.php">Books</a></li>
                     <li><a href="index.php">Notes</a></li>
-                    <li><a class ="btn " href="MyAccount.php"><?php  echo $_SESSION['std_name']; ?></a></li>
+                    <li><a class ="btn " href="../MyAccount.php"><?php  echo $_SESSION['std_name']; ?></a></li>
                 </ul>
 
             </div>

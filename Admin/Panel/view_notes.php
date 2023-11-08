@@ -1,5 +1,6 @@
 <?php
-if(isset($_GET['id']))
+session_start();
+if(isset($_GET['id']) && (isset($_SESSION['user']) || isset($_SESSION['std_name'])))
 {
 
   include("../app/db_connection.php");

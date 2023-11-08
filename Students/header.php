@@ -31,13 +31,13 @@
             <div class="nav-links" id="navlinks">
                 <i class="fa-solid fa-xmark" onclick="hidemenu()"></i>
                 <ul>
+                    <li><a href="MyAccount.php"><?php  echo $_SESSION['std_name']; ?></a></li>
                     <li><a href="index.php" >Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="courses.php">Courses</a></li>
                     <li><a href="books/index.php">Books</a></li>
                     <li><a href="notes/index.php">Notes</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
-                    <li><a class ="btn " href="MyAccount.php"><?php  echo $_SESSION['std_name']; ?></a></li>
                 </ul>
 
             </div>

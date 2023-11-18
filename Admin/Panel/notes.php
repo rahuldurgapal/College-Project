@@ -25,9 +25,11 @@
 
     <div class="fixed">
         <div class="sidebar">
-            <a href="index.php">Home</a>
+           <a  href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a class="active" href="notes.php">Notes</a>
+            <a href="students.php">Students</a>
+            <a href="admins.php">Admins</a>
         </div>
     </div>
     <div class="content">
@@ -95,7 +97,7 @@
                           ?>
                     <tr>
                         <th scope="row"><?php echo $row['notes_id'];?></th>
-                        <td><a href=""><?php echo $row['notes_topic'];?></a></td>
+                        <td><?php echo $row['notes_topic'];?></td>
                         <td><?php echo $row['notes_author'];?></td>
                         <td><?php echo $row['notes_subject'];?></td>
                         <td>

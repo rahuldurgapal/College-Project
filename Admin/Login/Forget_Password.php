@@ -4,7 +4,7 @@
  {
     session_start();
     $email = $_POST['admin_email'];
-    $sql = "SELECT * FROM `admin` WHERE `admin_email` = '$email'";
+    $sql = "SELECT * FROM `admins` WHERE `admin_email` = '$email'";
     $q=mysqli_query($con,$sql);
     if(mysqli_num_rows($q)>=1)
     {

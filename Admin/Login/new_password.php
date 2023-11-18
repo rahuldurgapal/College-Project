@@ -42,7 +42,7 @@ if(isset($_SESSION['confirm']))
         }
         else
          {
-            $sql = "UPDATE `admin` SET `admin_password`='$pass' WHERE `admin_email` = '$email'";
+            $sql = "UPDATE `admins` SET `admin_password`='$pass' WHERE `admin_email` = '$email'";
             $q = mysqli_query($con,$sql);
             if($q)
             {

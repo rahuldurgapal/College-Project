@@ -35,9 +35,11 @@ include("../app/db_connection.php");
 
     <div class="fixed">
         <div class="sidebar">
-            <a href="index.php">Home</a>
+        <a href="index.php">Home</a>
             <a class="active" href="book.php">Books</a>
             <a href="notes.php">Notes</a>
+            <a href="students.php">Students</a>
+            <a href="admins.php">Admins</a>
             <!-- <a href="#about"></a> -->
         </div>
     </div>
@@ -110,7 +112,7 @@ include("../app/db_connection.php");
                      
                     <tr>
                         <th scope="row"><?php echo $row['book_id']; ?></th>
-                        <td><a href=""><?php echo $row['book_name']; ?></a></td>
+                        <td><?php echo $row['book_name']; ?></td>
                         <td><?php echo $row['book_author_name'];  ?></td>
                         <td><?php echo $row['book_subject_name'];  ?></td>
                         <td>

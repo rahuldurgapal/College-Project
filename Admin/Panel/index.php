@@ -22,12 +22,32 @@
 <body>
     <?php
         include("header.php");
+        include("../app/db_connection.php");
+
+        $sql = mysqli_query($con,"SELECT * FROM students");
+        $students = mysqli_num_rows($sql);
+
+
+        $sql1 = mysqli_query($con,"SELECT * FROM books");
+        $books = mysqli_num_rows($sql1);
+
+
+        $sql2 = mysqli_query($con,"SELECT * FROM notes");
+        $notes = mysqli_num_rows($sql2);
+
+
+        $sql3 = mysqli_query($con,"SELECT * FROM admins");
+        $admins = mysqli_num_rows($sql3);
+
+
     ?>
     <div class="fixed">
         <div class="sidebar">
-            <a class="active" href="home.php">Home</a>
+            <a class="active" href="index.php">Home</a>
             <a href="book.php">Books</a>
             <a href="notes.php">Notes</a>
+            <a href="students.php">Students</a>
+            <a href="admins.php">Admins</a>
         </div>
     </div>
     <div class="content" style="display: flex;
@@ -41,25 +61,25 @@
             <hr>
             <div class="info">
                 <img src="../image/students.jpeg" alt="">
-                <h1>00</h1>
+                <h1><?php echo $students;   ?></h1>
             </div>
-            <button class="btn">
+            <a href="students.php" class="btn">
                 View Students > 
-            </button>
+            </a>
         </div>
 
         <div class="box" style="background-color: rgb(11, 197, 11)">
             <div class="title">
-                <h1>Teachers Info</h1>
+                <h1>Admin Info</h1>
             </div>
             <hr>
             <div class="info">
                 <img src="../image/teacher.jpg" alt="">
-                <h1>00</h1>
+                <h1><?php echo $admins;   ?></h1>
             </div>
-            <button class="btn">
-                View Teachers > 
-            </button>
+            <a href="admins.php" class="btn">
+                View Admins > 
+            </a>
         </div>
 
         <div class="box" style="background-color: rgb(34, 1, 219)">
@@ -69,11 +89,11 @@
             <hr>
             <div class="info">
                 <i class="fa fa-book" style="font-size: 100px; color: rgb(255, 238, 0)"></i>
-                <h1>00</h1>
+                <h1><?php echo $books;   ?></h1>
             </div>
-            <button class="btn">
+            <a href="book.php" class="btn">
                 View Books > 
-            </button>
+            </a>
         </div>
 
         <div class="box" style="background-color: rgb(219, 1, 81)">
@@ -83,11 +103,11 @@
             <hr>
             <div class="info">
                 <i class="fa fa-file" style="font-size: 100px; color: rgb(255, 207, 207);"></i>
-                <h1>00</h1>
+                <h1><?php echo $notes;   ?></h1>
             </div>
-            <button class="btn">
+            <a href="notes.php" class="btn">
                 View Notes > 
-            </button>
+            </a>
         </div>
 
         <div class="box" style="background-color: rgb(11, 96, 255)">

@@ -19,11 +19,11 @@ error_reporting(E_ALL);
     //match tha data from database
    
 
-    $sql = "select * from admin where admin_username = '$new_username' and admin_password = '$new_password'";
+    $sql = "select * from admins where admin_username = '$new_username' and admin_password = '$new_password'";
     $result = mysqli_query($con,$sql);
     $count = mysqli_num_rows($result);
 
-    $sql1 = "select * from admin where admin_email = '$new_username' and admin_password = '$new_password'";
+    $sql1 = "select * from admins where admin_email = '$new_username' and admin_password = '$new_password'";
     $result1 = mysqli_query($con,$sql1);
     $count1 = mysqli_num_rows($result1);
 

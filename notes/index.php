@@ -48,7 +48,7 @@
       ini_set('display_errors', 1);
       ini_set('display_startup_errors', 1);
       error_reporting(E_ALL);
-        include("../../Admin/app/db_connection.php");
+        include("../Admin/app/db_connection.php");
         $sql = "";
         if(isset($_POST['data'])){
             $data = $_POST['data'];
@@ -65,7 +65,7 @@
                 <div class="box">
                     <p><pan>Subject Name : </pan> <?=$row['notes_subject']?></p>
                     <p><pan>Author Name : </pan> <?=$row['notes_author']?></p>
-                    <a href="../../Admin/Panel/view_notes.php?id=<?=$row['notes_id']?>" target="_blank" class="btn btn-primary">View</a>
+                    <a href="../Admin/Panel/view_notes.php?id=<?=$row['notes_id']?>" target="_blank" class="btn btn-primary">View</a>
                 </div>
             </div>
 

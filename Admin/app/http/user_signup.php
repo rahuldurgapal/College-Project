@@ -30,25 +30,25 @@ $s = "select student_email from students where student_email='$email'";
 
     $warn = "Name filled is empty";
     
-  header("location: ../../../Students/signup?warn=$warn");
+  header("location: ../../../signup?warn=$warn");
   // exit(0);
 }
 
   else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
   {
     $warn = "Email is not valid";
-  header("Location: ../../../Students/signup?warn=$warn");
+  header("Location: ../../../signup?warn=$warn");
   }
 
   else if(mysqli_num_rows(mysqli_query($con,$s))>=1)
   {
       $warn = "This email is already exsist";
-    header("Location: ../../../Students/signup?warn=$warn");
+    header("Location: ../../../signup?warn=$warn");
   }
  
 else if((strlen($password) < 8) || !$number || !$uppercase || !$lowercase || !$specialChars) {
  $warn = "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
- header("location: ../../../Students/signup?warn=$warn");
+ header("location: ../../../signup?warn=$warn");
 }
 
 else{
@@ -59,14 +59,14 @@ else{
   $_SESSION['user_pass']=$new_password;
   
   $_SESSION['email_otp']=rand(100000,999999);
-  header("location: ../../../Students/signup/otpverify.php");
+  header("location: ../../../signup/otpverify.php");
 
 
 }
 
 }
 else 
- header("location: ../../../Students/signup");
+ header("location: ../../../signup");
 
 
 

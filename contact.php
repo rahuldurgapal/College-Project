@@ -91,11 +91,7 @@
         </div>
     </section>
     <!-- Call To Action -->
-    <section class="cta">
-        <h1>Please Login to access our exclusive range of resources and <br> unlock a world of knowledge tailored to
-            your educational journey.</h1>
-        <a href="SignIn.html" class="hero-btn"> Login Now</a>
-    </section>
+   
     <!-- Footer -->
     <?php include("footer.php");  ?>
 

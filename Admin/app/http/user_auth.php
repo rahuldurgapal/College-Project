@@ -31,16 +31,16 @@ if(isset($_POST['user_login']))
            $user=mysqli_fetch_assoc($result);
            $_SESSION['std_name']=$user['student_name'];
            $_SESSION['std_email'] = $user['student_email'];
-           header("location: ../../../Students/index.php");
+           header("location: ../../../index.php");
        }
      
        else{
            $warn = "Your @username or @email or password is invalid!";
-           header("Location: ../../../Students/login?warn=$warn");
+           header("Location: ../../../login?warn=$warn");
        }
     
 }
 else 
- header("location: ../../../Students/login");
+ header("location: ../../../login");
 
 ?>

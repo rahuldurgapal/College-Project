@@ -35,7 +35,7 @@ if(isset($_SESSION['pass']))
                              Password Change Successfully
                              </div>';
                 ?>
-                <a href="index.php" style="">Back To Login</a>
+                <a href="../index.php" style="">Back To Login</a>
 
             
         </div>

@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
-include("../../Admin/app/db_connection.php");
+include("../Admin/app/db_connection.php");
 if(isset($_SESSION['done'])){
 
      $new_name = $_SESSION['user_name'];

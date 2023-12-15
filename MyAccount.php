@@ -18,8 +18,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,700;0,800;1,800&family=Poppins:wght@100;200;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../Students/style.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -140,7 +140,7 @@
      
         $name = $_SESSION['std_name'];
         include('header.php');   
-        include("../Admin/app/db_connection.php");
+        include("Admin/app/db_connection.php");
         $sql = "select * from students where student_name='$name'";
         $q=mysqli_query($con,$sql);
         $res=mysqli_fetch_assoc($q);

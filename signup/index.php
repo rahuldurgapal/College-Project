@@ -12,8 +12,8 @@
     <div class="container">
     
         <div class="sign-container">
-            <form action="../../Admin/app/http/user_signup.php" method="post">
-                <img src="/Students/signup/img/user.png" alt="" class="avatar">
+            <form action="../Admin/app/http/user_signup.php" method="post">
+                <img src="/signup/img/user.png" alt="" class="avatar">
                  <h2>Sign up</h2>
                  <?php
                 if(isset($_GET['warn'])){

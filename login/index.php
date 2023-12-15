@@ -13,7 +13,7 @@
      <img src="./img/loginbg.svg" alt="" class="wave">
      <div class="container">        
      <div class="login_container">
-            <form action="../../Admin/app/http/user_auth.php" method="post">
+            <form action="../Admin/app/http/user_auth.php" method="post">
                 <img class="avatar" src="./img/login avatar.png" >
                 <h2>Welcome</h2>
                 <?php

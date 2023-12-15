@@ -51,7 +51,7 @@
       ini_set('display_errors', 1);
       ini_set('display_startup_errors', 1);
       error_reporting(E_ALL);
-        include("../../Admin/app/db_connection.php");
+        include("../Admin/app/db_connection.php");
             $sql = "";
             if(isset($_POST['data'])){
                 $data = $_POST['data'];
@@ -63,14 +63,14 @@
       ?>
     
             <div class="card ">
-                <div class="pdf-preview" data-pdf-url="../../Admin/Panel/Books/<?php echo $res['book_pdf'];  ?>"></div>
+                <div class="pdf-preview" data-pdf-url="../Admin/Panel/Books/<?php echo $res['book_pdf'];  ?>"></div>
                 <div class="box">
                     <h4><?php echo $res['book_name'];    ?></h4>
                     <hr>
                     <h6><?php  echo $res['book_author_name'];  ?></h6>
                     <hr>
 
-                    <a href="<?php echo "../../Admin/Panel/Books/".$res['book_pdf'];?>" class="btn btn-primary" download><i class="fa fa-download" data-toggle="tooltip"
+                    <a href="<?php echo "../Admin/Panel/Books/".$res['book_pdf'];?>" class="btn btn-primary" download><i class="fa fa-download" data-toggle="tooltip"
                             data-placement="bottom" title="Download Book"></i></a>
                     &nbsp
                     <button class="btn btn-primary"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom"

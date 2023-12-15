@@ -24,6 +24,7 @@ if(isset($_SESSION['pass']))
 </head>
 
 <body>
+    <!--  -->
     <div class="container">
         <div class="img">
             <img src="img/programming.svg" alt="">
